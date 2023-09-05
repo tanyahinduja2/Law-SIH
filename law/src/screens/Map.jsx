@@ -17,9 +17,9 @@ const Map = () => {
     const fetchData = async () => {
       if (location !== "") {
         alert("location is added", location);
-        const serpapiUrl = `https://serpapi.com/search.json?engine=google_local&q=legal+advisor+in+mumbai&location=Mumbai%2C+Maharashtra%2C+India&google_domain=google.co.in&gl=in&hl=en&api_key=5d1b79b4ee809fa8365d09f2d36a866dda3b7e1e2f93ad1c59726eff1454f4f2`;
+        const serpapiUrl = `http://serpapi.com/search.json?engine=google_local&q=legal+advisor+in+mumbai&location=Mumbai%2C+Maharashtra%2C+India&google_domain=google.co.in&gl=in&hl=en&api_key=5d1b79b4ee809fa8365d09f2d36a866dda3b7e1e2f93ad1c59726eff1454f4f2`;
         try {
-          const response = await fetch(serpapiUrl);
+          const response = await fetch(serpapiUrl,{method: 'GET',mode: 'no-cors',});
 
           if (!response.ok) {
             throw new Error("Network response was not ok");
