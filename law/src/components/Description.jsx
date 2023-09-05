@@ -81,6 +81,34 @@ export const Description = () => {
           <button className="features-button"><span>LEARN MORE</span><AiOutlineArrowRight style={{}} /></button>
         </div>
       </div>
+      <div className="constitute">
+          Why Choose Constitute
+</div>
+<br />
+<br />
+            <div className="constitutebox">
+              <div className="box">
+                <figure className="figure-img">
+                <img src="https://constitute.com.au/wp-content/uploads/2021/10/customer-service-svgrepo-com.svg" alt="" /></figure>
+                <br /><br />
+                <h2>PERSONALISED SERVICE</h2>
+                <p>Constitute advisers take time to get to know your project.They're fully decdicated to offering the highest level of customer service.</p>
+              </div>
+              <div className="box">
+              <figure className="figure-img">
+                <img src="https://constitute.com.au/wp-content/uploads/2021/10/documents-svgrepo-com.svg" alt="" /></figure>
+                <br /><br />
+                <h2>QUALITY DOCUMENTS</h2>
+                <p>Our products have been created by specailist tax, corporate and trust lawyers, and are externally reviewed to ensure the highest quality.</p>
+              </div>
+              <div className="box">
+              <figure className="figure-img">
+                <img src="https://constitute.com.au/wp-content/uploads/2021/10/hand-peace-svgrepo-com.svg" alt="" /></figure>
+               <br /><br />
+                <h2>PEACE OF MIND</h2>
+                <p>We work with incorporated legal practices to ensure your documents are up to date. We are not just a document template provider. Our order forms guide the user through the process as a lawyer might, asking questions and providing options.</p>
+              </div>
+            </div>
     </div>
   );
 };

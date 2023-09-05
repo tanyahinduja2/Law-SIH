@@ -52,5 +52,23 @@
 .features-button:hover svg {
     transform: translateX(5px);
 }
-
+.constitute{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+}
+.constitutebox{
+    display: flex;
+    text-align: center;
+    width: auto;
+    justify-content: center;
+}
+.box{
+    margin: 15px;
+    margin-bottom: 50px;
+    width: 500px;
+    padding: 20px;
+    line-height: 20px;
+    position: relative;
+}
 
