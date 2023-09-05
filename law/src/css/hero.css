@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text {
+    margin-left: -60px; /* Approximately -10vw in pixels */
+    margin-top: 100px; /* Approximately 10vh in pixels */
+    font-size: 70px;
+    font-family: 'poppins';
+    line-height: 1.2;
+    color: black;
+    text-shadow: 0px 1px, 1px 0px, 1px 1px 0 black;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.svg {
+    margin-top: 100px;
+    width: 360px;
+    height: 360px;
+}
+
+p {
+    margin-top: 5vh;
+    font-family: 'poppins';
+    font-size: 16px;
+    color: gray;
+    text-shadow: none; 
+}
