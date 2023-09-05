@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/hero.css";
+import { AiOutlineArrowRight } from 'react-icons/ai';
 import hero1 from "../illustrations/hero1.svg";
 
 export default function Hero() {
@@ -17,7 +18,7 @@ export default function Hero() {
           type="submit"
           style={{ padding: "16px 30px 10px 30px" }}
         >
-          <h5>Get Started ➡</h5>
+          <h5>Get Started <AiOutlineArrowRight style={{}} /></h5>
         </button>
       </div>
       <div className="illustrations">
