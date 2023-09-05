@@ -7,7 +7,7 @@
 
 .text {
     margin-left: -60px; /* Approximately -10vw in pixels */
-    margin-top: 100px; /* Approximately 10vh in pixels */
+    margin-top: 80px; /* Approximately 10vh in pixels */
     font-size: 70px;
     font-family: 'poppins';
     line-height: 1.2;
@@ -18,7 +18,7 @@
 }
 
 .svg {
-    margin-top: 100px;
+    margin-top: 80px;
     width: 360px;
     height: 360px;
 }
