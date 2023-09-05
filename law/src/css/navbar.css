@@ -15,10 +15,10 @@
 }
 .navbar-brand{
     margin: 0 0 0 5vw;
-    font-size: 40px;
+    font-size: 32px;
 }
 .navbar{
-    height: 17vh;
+    height: 15vh;
     font-family:'poppins', sans-serif;
     line-height: 24px;
 }
