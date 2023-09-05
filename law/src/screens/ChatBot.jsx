@@ -1,9 +1,7 @@
-import React from "react";
+import React from 'react'
 
-const ChatBot = () => {
-    return (
-        <div>ChatBot</div>
-    )
+export default function ChatBot() {
+  return (
+    <div>ChatBot</div>
+  )
 }
-
-export default ChatBot;

@@ -91,7 +91,7 @@ export const Description = () => {
                 <figure className="figure-img">
                 <img src="https://constitute.com.au/wp-content/uploads/2021/10/customer-service-svgrepo-com.svg" alt="" /></figure>
                 <br /><br />
-                <h2>PERSONALISED SERVICE</h2>
+                <h2 style={{whiteSpace:"nowrap"}}>PERSONALISED SERVICE</h2>
                 <p>Constitute advisers take time to get to know your project.They're fully decdicated to offering the highest level of customer service.</p>
               </div>
               <div className="box">
