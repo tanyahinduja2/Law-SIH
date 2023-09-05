@@ -6,7 +6,7 @@ import hero1 from "../illustrations/hero1.svg";
 export default function Hero() {
   return (
     <div className="container">
-      <div className="text">
+      <div data-aos="fade-down" className="text">
         Making <br />
         Legal Structures, <br /> Easy
         <p style={{ fontWeight: "0" }}>
@@ -22,7 +22,7 @@ export default function Hero() {
         </button>
       </div>
       <div className="illustrations">
-        <img className="svg" src={hero1} alt="" />
+        <img data-aos="fade-up" className="svg" src={hero1} alt="" />
       </div>
     </div>
   );

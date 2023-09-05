@@ -51,7 +51,7 @@ export const Description = () => {
       </div>
       <div className="features">
         <div className="features-content">
-          <div
+          <div data-aos="fade-right"
             style={{
               fontSize: "36px",
               fontWeight: "700",
@@ -74,12 +74,12 @@ export const Description = () => {
             <AiOutlineArrowRight style={{}} />
           </button>
         </div>
-        <img className="features-img" src={hassle2} alt="img"></img>
+        <img data-aos="fade-left" className="features-img" src={hassle2} alt="img"></img>
       </div>
       <div className="features">
-        <img className="features-img" src={hassle3} alt="img"></img>
+        <img data-aos="fade-right" className="features-img" src={hassle3} alt="img"></img>
         <div className="features-content">
-          <div
+          <div data-aos="fade-left"
             style={{
               fontSize: "36px",
               fontWeight: "700",
@@ -103,10 +103,10 @@ export const Description = () => {
           </button>
         </div>
       </div>
-      <div className="constitute">Why Choose Constitute</div>
+      <div data-aos="fade-down" className="constitute">Why Choose Constitute</div>
       <br />
       <br />
-      <div className="constitutebox">
+      <div data-aos="fade-up" className="constitutebox">
         <div className="box">
           <figure className="figure-img">
             <img
