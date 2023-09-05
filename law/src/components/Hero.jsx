@@ -2,9 +2,11 @@ import React from "react";
 import "../css/hero.css";
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import hero1 from "../illustrations/hero1.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
-  return (
+ const navigate = useNavigate()
+  return (<>
     <div className="container">
       <div data-aos="fade-down" className="text">
         Making <br />
@@ -25,5 +27,10 @@ export default function Hero() {
         <img data-aos="fade-up" className="svg" src={hero1} alt="" />
       </div>
     </div>
-  );
+    <div className="gmaps">
+      <h3> Embark on a quest to connect with nearby advocates who can provide essential legal assistance.</h3>
+      <button className="btn explore"><h4 onClick={()=>{navigate("/maps")}}> Explore</h4></button>
+    </div>
+    </>
+  )
 }

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 30vh;
+    margin-bottom: 20vh;
 }
 
 .text {
@@ -29,4 +29,27 @@ p {
     font-size: 16px;
     color: gray;
     text-shadow: none; 
+}
+.gmaps{
+    height: 200px;
+    width: 100%;
+    background-color: #042699;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 0 0 100px;
+    color: white;
+    margin-bottom: 15vh;
+}
+.explore{
+    margin-right: 100px;
+    padding-top: 10px;
+    color:#042699 ;
+    background-color: #fff;
+    border: 2px solid white ;
+
+}
+.explore:hover{
+    background-color: #042699;
+    color: white;
 }
