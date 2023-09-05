@@ -4,7 +4,6 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 
 export const Description = () => {
   return (
-<<<<<<< HEAD
     <div>
       <div>
         <div className="title">Hassle-free Legal Documents</div>
@@ -82,8 +81,3 @@ export const Description = () => {
     </div>
   );
 };
-=======
-    <div></div>
-  )
-}
->>>>>>> origin/main

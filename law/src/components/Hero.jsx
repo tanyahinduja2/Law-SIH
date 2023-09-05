@@ -9,15 +9,15 @@ export default function Hero() {
         Making <br />
         Legal Structures, <br /> Easy
         <p style={{ fontWeight: "0" }}>
-          Constitute is Australia’s trusted supplier for legal structures <br />{" "}
+            India's trusted supplier for legal structures <br />{" "}
           to the advice industry
         </p>
         <button
           className="btn getstarted"
           type="submit"
-          style={{ paddingTop: "25px 30px" }}
+          style={{ padding: "16px 30px 10px 30px" }}
         >
-          <h4>Get Started →</h4>
+          <h5>Get Started ➡</h5>
         </button>
       </div>
       <div className="illustrations">
