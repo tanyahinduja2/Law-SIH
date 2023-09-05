@@ -1,5 +1,8 @@
 import React from "react";
 import "../css/description.css";
+import hassle1 from '../illustrations/hassle1.svg'
+import hassle2 from '../illustrations/hassle2.svg'
+import hassle3 from '../illustrations/hassle3.svg'
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
 export const Description = () => {
@@ -17,7 +20,7 @@ export const Description = () => {
       <div className="features">
         <img
           className="features-img"
-          src="https://constitute.com.au/wp-content/uploads/2021/10/Group-10336@2x.png"
+          src={hassle1}
           alt="img"
         ></img>
         <div className="features-content">
@@ -53,14 +56,14 @@ export const Description = () => {
         </div>
         <img
           className="features-img"
-          src="https://constitute.com.au/wp-content/uploads/2021/10/Group-10334@2x.png"
+          src={hassle2}
           alt="img"
         ></img>
       </div>
       <div className="features">
         <img
           className="features-img"
-          src="https://constitute.com.au/wp-content/uploads/2021/10/AdobeStock_228554566@2x.png"
+          src={hassle3}
           alt="img"
         ></img>
         <div className="features-content">
