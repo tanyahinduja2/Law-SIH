@@ -1,15 +1,20 @@
-import React from "react";
+import React,{ useEffect } from "react";
 import "../css/description.css";
 import hassle1 from "../illustrations/hassle1.svg";
 import hassle2 from "../illustrations/hassle2.svg";
 import hassle3 from "../illustrations/hassle3.svg";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export const Description = () => {
+  useEffect(()=>{
+    Aos.init({duration: 2000});
+  },[]);
   return (
     <div>
       <div>
-        <div className="title">Hassle-free Legal Documents</div>
+        <div data-aos="fade-down"  className="title">Hassle-free Legal Documents</div>
         <div className="title-content">
           Looking to register a company or set up a trust fund? Constitute makes
           tracking your paper trail both simple and seamless. And that’s just
@@ -18,9 +23,9 @@ export const Description = () => {
         </div>
       </div>
       <div className="features">
-        <img className="features-img" src={hassle1} alt="img"></img>
+        <img data-aos="fade-right" className="features-img" src={hassle1} alt="img"></img>
         <div className="features-content">
-          <div
+          <div data-aos="fade-left"
             style={{
               fontSize: "36px",
               fontWeight: "700",
