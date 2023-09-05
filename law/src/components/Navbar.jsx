@@ -32,7 +32,9 @@ const Navbar = () => {
           <li className="nav-item">
             <Link to="/chatbot" className='nav-link'>ChatBot</Link>
           </li>
-         
+          <li className="nav-item">
+            <Link to="/login" className='nav-link'>Login</Link>
+          </li>
         </ul>
           <button className="btn getstarted" type="submit">
             Get Started
