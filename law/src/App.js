@@ -1,11 +1,10 @@
 import "./App.css";
-import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import { Description } from "./components/Description";
 import { Routes, Route } from "react-router-dom";
 import Templates from "./screens/Templates";
 import ChatBot from "./screens/ChatBot";
 import Home from "./screens/Home";
+import Map from "./screens/Map";
 function App() {
   return (
     <div className="App">
@@ -15,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/templates" element={<Templates />} />
           <Route path="/chatbot" element={<ChatBot />} />
+          <Route path="/maps" element={<Map/>} />
         </Routes>
       </div>
     </div>
