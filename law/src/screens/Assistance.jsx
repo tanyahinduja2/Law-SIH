@@ -18,6 +18,7 @@ export default function Assistance() {
       </div>
       <div className="rectangle">
         <div className="pfp"></div>
+        
         <div className="name">
           Varun Jajoo
           <div className="expertise">Divorce Lawyer</div>
