@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20vh;
+}
+
+.text {
+    margin-left: -60px; /* Approximately -10vw in pixels */
+    margin-top: 80px; /* Approximately 10vh in pixels */
+    font-size: 70px;
+    font-family: 'poppins';
+    line-height: 1.2;
+    color: black;
+    text-shadow: 0px 1px, 1px 0px, 1px 1px 0 black;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.svg {
+    margin-top: 80px;
+    width: 360px;
+    height: 360px;
+}
+
+p {
+    margin-top: 5vh;
+    font-family: 'poppins';
+    font-size: 16px;
+    color: gray;
+    text-shadow: none; 
+}
+.gmaps{
+    height: 200px;
+    width: 100%;
+    background-color: #042699;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 0 0 100px;
+    color: white;
+    margin-bottom: 15vh;
+}
+.explore{
+    margin-right: 100px;
+    padding-top: 10px;
+    color:#042699 ;
+    background-color: #fff;
+    border: 2px solid white ;
+
+}
+.explore:hover{
+    background-color: #042699;
+    color: white;
+}
+
+.getstarted1:hover{
+    color: #042699;
+}
+
+.getstarted1{
+    background-color: #042699;
+    color: white;
+    margin: auto;
+   border: none;
+   height: 60px;
+   width: 200px;
+   border-radius: 5px;
+}
