@@ -21,25 +21,25 @@ const Map = () => {
   const handleClick = async () => {
     setReq(!req);
     setData(data2);
-    if (location !== "") {
-        const apiKey = "608796d36c114ccc8789a200c808c78b";
-        const encodedLocation = encodeURIComponent(location);
-        const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodedLocation}&key=${apiKey}`;
+    // if (location !== "") {
+    //     const apiKey = "608796d36c114ccc8789a200c808c78b";
+    //     const encodedLocation = encodeURIComponent(location);
+    //     const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodedLocation}&key=${apiKey}`;
 
-        try {
-          const response = await axios.get(apiUrl);
-          const firstResult = response.data.results[0];
-          if (firstResult) {
-            const { lat, lng } = firstResult.geometry;
-            setCityCoordinates([lat, lng]);
-            setMapKey(mapKey + 1);
-          } else {
-            alert("Location not found for the given city.");
-          }
-        } catch (error) {
-          console.error("Error fetching data:", error);
-        }
-      }
+    //     try {
+    //       const response = await axios.get(apiUrl);
+    //       const firstResult = response.data.results[0];
+    //       if (firstResult) {
+    //         const { lat, lng } = firstResult.geometry;
+    //         setCityCoordinates([lat, lng]);
+    //         setMapKey(mapKey + 1);
+    //       } else {
+    //         alert("Location not found for the given city.");
+    //       }
+    //     } catch (error) {
+    //       console.error("Error fetching data:", error);
+    //     }
+    //   }
   };
 
   const data2 = {

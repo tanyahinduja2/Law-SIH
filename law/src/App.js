@@ -7,6 +7,7 @@ import Home from "./screens/Home";
 import Map from "./screens/Map";
 import Login from "./screens/login";
 import Signup from "./screens/signup"
+import Profile from "./screens/Profile";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/maps" element={<Map/>} />
           <Route path="/joinus" element={<Login />} />
           <Route path="/joinus" element={<Signup />}/>
+          <Route path="/profile" element={<Profile />}/>
         </Routes>
       </div>
     </div>

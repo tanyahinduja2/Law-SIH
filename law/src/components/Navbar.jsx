@@ -1,7 +1,8 @@
 import React from 'react'
 import '../css/navbar.css'
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
@@ -38,8 +39,10 @@ const Navbar = () => {
             <Link to="/joinus" className='nav-link'>Login</Link>
           </li>
         </ul>
-          <button className="btn getstarted" type="submit">
-            Get Started
+          <button className="getstarted" type="submit">
+            <Link to="/profile" style={{textDecoration:"none",color:"white"}}>
+            Profile
+            </Link>
           </button>
         
       </div>

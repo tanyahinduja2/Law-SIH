@@ -2,11 +2,14 @@
     background-color: #042699;
     color: white;
     margin: auto;
-   
+   border: none;
+   height: 40px;
+   width: 70px;
+   border-radius: 5px;
 }
-.getstarted:hover{
+/* .getstarted:hover{
     color: #042699;
-}
+} */
 .navbar-nav{
    margin-left: 25vw;
 }
