@@ -1,57 +1,35 @@
-// import React from "react";
-// import { auth, provider } from "./firebase-config.js";
-// import { signInWithPopup } from "firebase/auth";
-// import Cookies from "universal-cookie";
-
-// const cookies = new Cookies();
-
-// export const Auth = ({ setIsAuth }) => {
-//   const signInWithGoogle = async () => {
-//     try {
-//       const result = await signInWithPopup(auth, provider);
-//       cookies.set("auth-token", result.user.refreshToken);
-//       setIsAuth(true);
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
-//   return (
-//     <div className="auth">
-//       <p> Sign In With Google To Continue </p>
-//       <button onClick={signInWithGoogle}> Sign In With Google </button>
-//     </div>
-//   );
-// };
-import React from "react";
+import React, { useState } from "react";
 import { auth, provider } from "./firebase-config.js";
 import { signInWithPopup } from "firebase/auth";
 import Cookies from "universal-cookie";
-import { doc, setDoc } from "firebase/firestore"; // Import Firestore functions
-import { db } from "./firebase-config.js"; // Import your Firestore instance
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "./firebase-config.js";
+import "../css/auth.css";
 
 const cookies = new Cookies();
 
 export const Auth = ({ setIsAuth }) => {
+  const [activeTab, setActiveTab] = useState(2);
+  const [expertise, setExpertise] = useState("");
   const signInWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
 
-      // Extract user data
       const user = result.user;
 
-      // Create a reference to the Firestore document
       const userDocRef = doc(db, "users", user.uid);
 
-      // Define the user data you want to store
       const userData = {
-        id:user.uid,
-        displayName: user.displayName,
+        id: user.uid,
+        name: user.displayName,
         email: user.email,
-        
-        // Add other user properties here
+        photoURL: user.photoURL,
+        phoneNumber: user.phoneNumber,
+        formFilled: true,
+        expert: activeTab === 1 ? false : true,
+        expertise,
       };
 
-      // Set the user data in Firestore
       await setDoc(userDocRef, userData);
 
       cookies.set("auth-token", user.refreshToken);
@@ -61,10 +39,63 @@ export const Auth = ({ setIsAuth }) => {
     }
   };
 
+  const handleTabChange = (tabIndex) => {
+    setActiveTab(tabIndex);
+  };
+
   return (
     <div className="auth">
-      <p> Sign In With Google To Continue </p>
-      <button onClick={signInWithGoogle}> Sign In With Google </button>
+      <h1>Sign In</h1>
+      <h3>Are you a legal consortium?</h3>
+      <h5>
+        (eg. advocates, arbitrators, mediators, notaries, and document writers)
+      </h5>
+      {activeTab === 2 && (
+        <div>
+          <input
+            style={{
+              width: "400px",
+              border: "none",
+              backgroundColor: "lightgray",
+              padding: "10px",
+              borderRadius: "5px",
+            }}
+            value={expertise}
+            onChange={(e) => setExpertise(e.target.value)}
+            placeholder="Enter your expertise"
+          />
+        </div>
+      )}
+      <div className="container">
+        <div className="tabs">
+          <input
+            type="radio"
+            id="radio-1"
+            name="tabs"
+            checked={activeTab === 1}
+            onChange={() => handleTabChange(1)}
+          />
+          <label className="tab" htmlFor="radio-1">
+            No
+          </label>
+          <input
+            type="radio"
+            id="radio-2"
+            name="tabs"
+            checked={activeTab === 2}
+            onChange={() => handleTabChange(2)}
+          />
+          <label className="tab" htmlFor="radio-2">
+            Yes
+          </label>
+          <span className="glider"></span>
+        </div>
+      </div>
+
+      <button className="btn" onClick={signInWithGoogle}>
+        {" "}
+        Sign In With Google{" "}
+      </button>
     </div>
   );
 };
