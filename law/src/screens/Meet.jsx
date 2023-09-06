@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
-import { PopupModal } from 'react-calendly';
+import { PopupModal,useCalendlyEventListener } from 'react-calendly';
 import '../css/chat.css'
 
 const Meet = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const prefill =""
+  useCalendlyEventListener({
+    onProfilePageViewed: () => console.log("onProfilePageViewed"),
+    onDateAndTimeSelected: (e) => console.log("onDateAndTimeSelected",e),
+    onEventTypeViewed: () => console.log("onEventTypeViewed"),
+    onEventScheduled: (e) => console.log(e.data.payload),
+  });
   return (
-    <div >
+    <div className='meet-container' >
       <button
         style={{ display: 'block', margin: '0 auto' }}
         onClick={() => setIsOpen(true)}
@@ -15,11 +20,20 @@ const Meet = (props) => {
       </button>
       
       <PopupModal
-      styles = {{height : "300px"}}
+        
         url="https://calendly.com/varun-jajoo18"
-        pageSettings={props.pageSettings}
+        pageSettings={{
+            backgroundColor: 'ffffff',
+            hideEventTypeDetails: true,
+            hideLandingPageDetails:false,
+            primaryColor: '00a2ff',
+            textColor: '4d5055'
+          }}
         utm={props.utm}
-        prefill= {prefill}
+        prefill= {{
+            name: "Your Name",
+            email: "your@email.com",
+          }}
         onModalClose={() => setIsOpen(false)}
         open={isOpen}
         /*
