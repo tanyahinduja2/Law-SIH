@@ -1,0 +1,49 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+            "aside left left"
+            "aside content content"
+            "aside right right";
+   
+  }
+  
+   .aside, .left, .content, .right {
+    border: 1px solid black;
+  background-color: white;
+  }
+  
+  
+  .aside {
+
+    grid-area: aside;
+    height: 633px; 
+    border-radius: 40px;
+  text-align: center;
+  }
+  .aside img{
+    height: 241px;
+    width: 255px;
+    
+  }
+  .left {
+    grid-area: left;
+  }
+  
+  .content {
+    grid-area: content;
+    
+  }
+  
+  .right {
+    grid-area: right;
+   
+  }
+  
+  .left, .content, .right {
+    height: 205px; 
+     border-radius: 40px;
+      text-align:center;
+      margin-left: 10px;
+      margin-bottom: 10px;
+  }
