@@ -16,7 +16,7 @@ export default function Hero() {
           to the advice industry
         </p>
         <button
-          className="btn getstarted"
+          className="btn getstarted1"
           type="submit"
           style={{ padding: "16px 30px 10px 30px" }}
         >

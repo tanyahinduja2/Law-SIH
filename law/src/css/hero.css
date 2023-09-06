@@ -53,3 +53,17 @@ p {
     background-color: #042699;
     color: white;
 }
+
+.getstarted1:hover{
+    color: #042699;
+}
+
+.getstarted1{
+    background-color: #042699;
+    color: white;
+    margin: auto;
+   border: none;
+   height: 60px;
+   width: 200px;
+   border-radius: 5px;
+}
