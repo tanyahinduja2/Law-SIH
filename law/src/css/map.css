@@ -33,7 +33,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .leaflet-container {
@@ -41,3 +40,7 @@
     width: 90%;
     border-radius: 20px;
   }
+
+  .leaflet .leaflet-tile-pane {
+    border-radius: 0 !important;
+}

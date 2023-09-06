@@ -641,8 +641,6 @@ const Map = () => {
       },
     },
   };
-  console.log(data2.local_results[0].gps_coordinates.latitude);
-  console.log(data2.local_results[1].title);
   useEffect(() => {
     // const fetchData = async () => {
     //   if (location !== "") {
@@ -702,11 +700,11 @@ const Map = () => {
       {
         <div className="map-box">
           <MapContainer center={cityCoordinates} zoom={11} key={mapKey}>
-            <TileLayer
-              attribution=''
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            {data2.local_results.map((marker, id) => (
+          <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+           {data2.local_results.map((marker, id) => (
               <Marker
                 key={marker.place_id}
                 position={[
@@ -719,6 +717,7 @@ const Map = () => {
               </Marker>
             ))}
           </MapContainer>
+          
         </div>
       }
     </>
