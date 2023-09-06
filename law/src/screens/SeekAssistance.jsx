@@ -10,10 +10,10 @@ export default function SeekAssistance() {
 
   return (
     <div className="card-container">
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card" onClick={handleclick}><p className="p">Need legal advice or guidance? Schedule a meeting with a knowledgeable lawyer on our government website today – your path to clarity and resolution starts here.</p></div>
-      <div class="card"></div>
+      <div class="card1"></div>
+      <div class="card1"></div>
+      <div class="card1" onClick={handleclick}><p className="p">Need legal advice or guidance? Schedule a meeting with a knowledgeable lawyer on our government website today – your path to clarity and resolution starts here.</p></div>
+      <div class="card1"></div>
     </div>
   );
 }

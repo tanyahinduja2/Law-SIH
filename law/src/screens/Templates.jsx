@@ -64,7 +64,7 @@ export default function Templates() {
               {card.title}
             </h3>
             <p>{ card.text }</p>
-            <button className="btn">Explore</button>
+            <button className="btn card-btn">Explore</button>
           </div>
               ))
         }
