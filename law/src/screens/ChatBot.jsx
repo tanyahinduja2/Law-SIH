@@ -1,32 +1,60 @@
 import React from "react";
 import { Auth } from "../firebase/Auth";
-import { useState, useRef } from "react";
+import { useState, useRef ,useEffect} from "react";
 import Cookies from "universal-cookie";
 import Chat from "../firebase/Chat";
-import {AppWrapper} from "../firebase/AppWrapper";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+} from "firebase/firestore"
 import Assistance from "./Assistance";
+import { getAuth, onAuthStateChanged } from "firebase/auth"
 const cookies = new Cookies();
 
 function ChatBot() {
-  const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
+  const auth = getAuth();
+  const [user, setUser] = useState(null)
   const [isInChat, setIsInChat] = useState(null);
   const [room, setRoom] = useState("");
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (authUser) => {
+      if (authUser) {
+        const db = getFirestore();
+        const userDocRef = doc(db, "users", authUser.uid);
 
-  if (!isAuth) {
+        try {
+          const userDocSnapshot = await getDoc(userDocRef);
+          if (userDocSnapshot.exists()) {
+            setUser(userDocSnapshot.data());
+          } else {
+            console.error("User data not found in Firestore");
+          }
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        }
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+  if (!user) {
     return (
-      <AppWrapper
-        isAuth={isAuth}
-        setIsAuth={setIsAuth}
-        setIsInChat={setIsInChat}
-      >
-        <Auth setIsAuth={setIsAuth} />
-      </AppWrapper>
+     
+        <Auth  />
+     
     );
   }
 
   return (<>
     <div><Assistance/></div>
-    <AppWrapper isAuth={isAuth} setIsAuth={setIsAuth} setIsInChat={setIsInChat}>
+   
       
       {!isInChat ? (
         <div className="room">
@@ -43,7 +71,7 @@ function ChatBot() {
       ) : (
         <Chat room={room} />
       )}
-    </AppWrapper>
+    
     </>
     
   );
