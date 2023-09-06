@@ -5,6 +5,9 @@ import Templates from "./screens/Templates";
 import ChatBot from "./screens/ChatBot";
 import Home from "./screens/Home";
 import Map from "./screens/Map";
+import Login from "./screens/login";
+import Signup from "./screens/signup"
+
 function App() {
   return (
     <div className="App">
@@ -15,6 +18,8 @@ function App() {
           <Route path="/templates" element={<Templates />} />
           <Route path="/chatbot" element={<ChatBot />} />
           <Route path="/maps" element={<Map/>} />
+          <Route path="/joinus" element={<Login />} />
+          <Route path="/joinus" element={<Signup />}/>
         </Routes>
       </div>
     </div>
