@@ -1,0 +1,22 @@
+.card {
+    width: 100px;
+    height: 254px;
+    border-radius: 10px;
+    background: #e0e0e0;
+    flex:0 0 35%;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+  }
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+    margin : 40px 50px;
+  }
+.p{
+    margin: 30px 0 0 25px ;
+    color: #0808cde6;
+    font-size: 20px;
+}
