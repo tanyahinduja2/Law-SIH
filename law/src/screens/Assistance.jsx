@@ -5,7 +5,7 @@ export default function Assistance() {
   return (
     <>
       <div className="rectangle">
-        <div className="pfp"> <img src={pfp} alt="" /></div>
+        <div className="pfp"> <img className="img1" src={pfp} alt="" /></div>
         <div className="name">
           Varun Jajoo
           <div className="expertise">Divorce Lawyer</div>
