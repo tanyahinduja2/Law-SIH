@@ -16,7 +16,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <div>Profile</div>
+ <div></div>
   )
 }
 
