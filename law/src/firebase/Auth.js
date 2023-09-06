@@ -9,7 +9,7 @@ import "../css/auth.css";
 const cookies = new Cookies();
 
 export const Auth = ({ setIsAuth }) => {
-  const [activeTab, setActiveTab] = useState(2);
+  const [activeTab, setActiveTab] = useState(1);
   const [expertise, setExpertise] = useState("");
   const signInWithGoogle = async () => {
     try {
@@ -92,7 +92,7 @@ export const Auth = ({ setIsAuth }) => {
         </div>
       </div>
 
-      <button className="btn" onClick={signInWithGoogle}>
+      <button className="btn auth1" onClick={signInWithGoogle}>
         {" "}
         Sign In With Google{" "}
       </button>

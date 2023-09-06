@@ -31,7 +31,7 @@ const Navbar = () => {
             <Link to="/templates" className='nav-link'>Templates</Link>
           </li>
           <li className="nav-item">
-            <Link to="/chatbot" className='nav-link'>
+            <Link to="/assist" className='nav-link'>
               Seek Assistance
             </Link>
           </li>

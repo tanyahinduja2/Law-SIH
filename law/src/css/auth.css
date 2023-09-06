@@ -5,7 +5,7 @@
     gap: 20px;
 }
 
-.btn{
+.auth1{
     border: none;
     background-color: grey;
     color: aliceblue;
@@ -14,7 +14,7 @@
     margin-top: -100px;
 }
 
-.btn:hover{
+.auth1:hover{
     border: 1px solid grey;
     background-color: white;
     color: grey;

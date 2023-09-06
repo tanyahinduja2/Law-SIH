@@ -11,6 +11,8 @@ import Profile from "./screens/Profile";
 import SeekAssistance from "./screens/SeekAssistance";
 import Meet from "./screens/Meet";
 import Footer from "./components/Footer";
+import Chat from "./firebase/Chat";
+import ChatBot from "./screens/ChatBot";
 
 function App() {
   return (
@@ -20,7 +22,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/templates" element={<Templates />} />
-          <Route path="/chatbot" element={<SeekAssistance />} />
+          <Route path="/assist" element={<SeekAssistance />} />
+          <Route path="/chatbot" element={<ChatBot/>}/>
           <Route path="/maps" element={<Map/>} />
           <Route path="/joinus" element={<Login />} />
           <Route path="/joinus" element={<Signup />}/>
