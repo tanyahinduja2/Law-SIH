@@ -6,7 +6,7 @@ import {
   onSnapshot,
   query,
   where
-} from "@firebase/firestore";
+} from "firebase/firestore";
 import { auth, db } from "./firebase-config";
 
 export default function Chat(props) {
