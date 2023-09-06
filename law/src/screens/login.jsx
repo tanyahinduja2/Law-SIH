@@ -1,6 +1,6 @@
 import React from 'react'
 import "../css/login.css";
-import login1 from "../illustrations/login.jpeg";
+import login1 from "../illustrations/login.svg";
 
 export default function Login() {
   return (
