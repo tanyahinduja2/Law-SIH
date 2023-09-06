@@ -644,6 +644,7 @@ const Map = () => {
   console.log(data2.local_results[0].gps_coordinates.latitude);
   console.log(data2.local_results[1].title);
   useEffect(() => {
+<<<<<<< HEAD
     // const fetchData = async () => {
     //   if (location !== "") {
     //     alert("location is added", location);
@@ -682,6 +683,28 @@ const Map = () => {
     //     }
     //   };
     //   fetchData2();
+=======
+    const fetchData = async () => {
+      if (location !== "") {
+        alert("location is added", location);
+        const serpapiUrl = "https://serpapi.com/search.json?engine=google_local&q=legal+advisers+in+mumbai&google_domain=google.com&api_key=28b7bc775e05169a8761305ab4ab921ba00c2d7d523ccf3ae6353b40414baf4f";
+        try {
+          const response = await fetch(serpapiUrl,{method: 'GET',mode: 'no-cors',});
+
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+
+          const data = await response.json();
+          setData(data);
+          console.log(data);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      }
+    };
+    fetchData();
+>>>>>>> origin/main
   }, [req]);
 
   return (
