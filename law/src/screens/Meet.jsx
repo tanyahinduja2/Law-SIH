@@ -1,49 +1,56 @@
 import React, { useState } from 'react';
-import { PopupModal,useCalendlyEventListener } from 'react-calendly';
-import '../css/chat.css'
+import { PopupModal, useCalendlyEventListener } from 'react-calendly';
+import '../css/chat.css';
 
 const Meet = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [eventTime, setEventTime] = useState(null); // State to store event time
+
   useCalendlyEventListener({
     onProfilePageViewed: () => console.log("onProfilePageViewed"),
-    onDateAndTimeSelected: (e) => console.log("onDateAndTimeSelected",e),
+    onDateAndTimeSelected: (e) => console.log("onDateAndTimeSelected", e),
     onEventTypeViewed: () => console.log("onEventTypeViewed"),
-    onEventScheduled: (e) => console.log(e.data.payload),
+    onEventScheduled: (e) => {
+      const eventData = e.data.payload;
+      const time = eventData.eventTime; // Assuming eventTime is a property in the event payload
+      
+      // Store the event time in state
+      setEventTime(time);
+      console.log(eventData)
+      console.log(`Event scheduled at: ${time}`);
+    },
   });
+
   return (
-    <div className='meet-container' >
+    <div className='meet-container'>
       <button
         style={{ display: 'block', margin: '0 auto' }}
         onClick={() => setIsOpen(true)}
       >
         Custom Button
       </button>
+
+      {eventTime && <p>Event Time: {eventTime}</p>} {/* Display event time */}
       
       <PopupModal
-        
         url="https://calendly.com/varun-jajoo18"
         pageSettings={{
-            backgroundColor: 'ffffff',
-            hideEventTypeDetails: true,
-            hideLandingPageDetails:false,
-            primaryColor: '00a2ff',
-            textColor: '4d5055'
-          }}
+          backgroundColor: 'ffffff',
+          hideEventTypeDetails: true,
+          hideLandingPageDetails: false,
+          primaryColor: '00a2ff',
+          textColor: '4d5055',
+        }}
         utm={props.utm}
-        prefill= {{
-            name: "Your Name",
-            email: "your@email.com",
-          }}
+        prefill={{
+          name: "Your Name",
+          email: "your@email.com",
+        }}
         onModalClose={() => setIsOpen(false)}
         open={isOpen}
-        /*
-         * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-         * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-         */
         rootElement={document.getElementById('root')}
       />
-      </div>
-    
+    </div>
   );
 };
 
