@@ -9,9 +9,9 @@ export default function Login() {
   const auth = getAuth();
   const user = useContext(UserContext);
   return (
-    <div className="login">
+    <div style={{marginTop:"50px"}} className="login">
       <div>
-        <img className="svg" alt="img" src={login1}></img>
+        <img className="svg" alt="img" style={{marginTop:"-10px"}} src={login1}></img>
       </div>
       {user ? (
         <div>

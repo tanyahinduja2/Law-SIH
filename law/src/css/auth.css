@@ -5,13 +5,27 @@
     gap: 20px;
 }
 
+.auth2{
+  border: 1px solid grey;
+  background-color: white;
+  color: grey;
+  height: 50px;
+    width: 200px;
+}
+
+.auth2:hover{
+  border: none;
+  background-color: grey;
+  color: aliceblue;
+}
+
 .auth1{
     border: none;
     background-color: grey;
     color: aliceblue;
     height: 50px;
     width: 200px;
-    margin-top: -100px;
+    margin-top: -140px;
 }
 
 .auth1:hover{
