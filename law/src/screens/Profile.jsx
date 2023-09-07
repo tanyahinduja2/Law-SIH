@@ -24,6 +24,7 @@ const Profile = () => {
                 <h3>Profile Page</h3>
                 <br />
                 <img
+                style={{borderRadius:"100%",height:"150px",width:"150px",}}
                   src={
                     user?.photoURL
                       ? user.photoURL
