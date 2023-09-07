@@ -48,7 +48,7 @@ function ChatBot() {
   return (
     <>
     {isInChat?(
-      <div>hi</div>
+      <div></div>
     ):<div>
     <Assistance />
   </div>}
