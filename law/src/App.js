@@ -11,7 +11,6 @@ import Profile from "./screens/Profile";
 import SeekAssistance from "./screens/SeekAssistance";
 import Meet from "./screens/Meet";
 import Footer from "./components/Footer";
-import Chat from "./firebase/Chat";
 import ChatBot from "./screens/ChatBot";
 
 function App() {
@@ -32,6 +31,7 @@ function App() {
         </Routes>
         
       </div>
+      <Footer />
     </div>
   );
 }

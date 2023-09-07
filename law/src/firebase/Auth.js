@@ -11,6 +11,7 @@ const cookies = new Cookies();
 export const Auth = ({ setIsAuth }) => {
   const [activeTab, setActiveTab] = useState(1);
   const [expertise, setExpertise] = useState("");
+
   const signInWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
@@ -45,7 +46,9 @@ export const Auth = ({ setIsAuth }) => {
 
   return (
     <div className="auth">
-      <h1>Sign In</h1>
+      <div>
+        <h2>Sign In</h2>
+      </div>
       <h3>Are you a legal consortium?</h3>
       <h5>
         (eg. advocates, arbitrators, mediators, notaries, and document writers)
@@ -62,7 +65,7 @@ export const Auth = ({ setIsAuth }) => {
             }}
             value={expertise}
             onChange={(e) => setExpertise(e.target.value)}
-            placeholder="Enter your expertise"
+            placeholder="Enter your expertise *"
           />
         </div>
       )}

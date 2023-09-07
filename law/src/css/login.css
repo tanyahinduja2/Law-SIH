@@ -7,9 +7,11 @@
 
 .login {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.formWrapper {
+/* .formWrapper {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -35,4 +37,4 @@
     border: solid 1px #042699;
     padding: 10px;
     border-radius: 8px;
-}
+} */

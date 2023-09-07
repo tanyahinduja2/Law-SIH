@@ -13,10 +13,7 @@ const Meet = (props) => {
     onEventScheduled: (e) => {
       const eventData = e.data.payload;
       const time = eventData.eventTime; // Assuming eventTime is a property in the event payload
-      
-      // Store the event time in state
       setEventTime(time);
-      console.log(eventData)
       console.log(`Event scheduled at: ${time}`);
     },
   });
