@@ -47,14 +47,17 @@ function ChatBot() {
 
   return (
     <>
-      <div>
-        <Assistance />
-      </div>
+    {isInChat?(
+      <div>hi</div>
+    ):<div>
+    <Assistance />
+  </div>}
+      
 
       {!isInChat ? (
         <div className="room">
           <label> Type room name: </label>
-          <input onChange={(e) => setRoom(e.target.value)} />
+          <input value="divorce" />
           <button
             onClick={() => {
               setIsInChat(true);
