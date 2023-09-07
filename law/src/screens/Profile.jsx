@@ -11,7 +11,6 @@ import {
   doc,
   getDoc,
 } from "firebase/firestore";
-import { Auth } from "../firebase/Auth";
 
 const Profile = () => {
   const auth = getAuth();
