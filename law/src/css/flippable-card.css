@@ -1,0 +1,91 @@
+.flippable-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+    margin : 40px 50px;
+    perspective: 1000px;
+}
+
+.card-1 {
+    width: 100px;
+    height: 254px;
+    border-radius: 10px;
+    background: #e0e0e0;
+    flex:0 0 35%;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+    padding: 0px;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transition: transform 650ms;
+}
+
+.card-1:hover {
+    transform: rotateY(180deg);
+}
+
+.card-front, 
+.card-back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 18px;
+    color: #042699;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    text-align: center;
+    padding: 48px 18px 24px 18px;
+}
+
+.card-front {
+    padding: 0 16px 0 16px;
+    font-size: 32px;
+    align-items: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-back p{
+    font-weight: 600;
+    color: #042699;
+}
+
+.flip-button {
+    border: none;
+    outline: none;
+    background: #1d39c4;
+    color: #fff;
+    border-radius: 10px;
+    max-width: 120px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: top 20px;
+    cursor: pointer;
+    transition: .3s;
+    border: 1px solid #1d39c4;
+    position: absolute;
+    bottom: 36px;
+}
+
+.flip-button span {
+    justify-content: center;
+    font-size: 16px;
+    padding-right: 4px;
+}
+
+.flip-button:hover {
+    background-color: #ffffff;
+    border: 1px solid #1d39c4;
+    color: #042699
+}

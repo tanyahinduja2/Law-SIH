@@ -70,9 +70,9 @@ export default function Templates() {
                 <img src={card.icon} alt="icon" className="icons"></img>
                 <h4>{card.title}</h4>
                 <p>{card.text}</p>
-                <Link to={`/templates/${encodeURIComponent(card.title)}`}>
+                {/* <Link to={`/templates/${encodeURIComponent(card.title)}`}> */}
                 <button className="btn card-btn">Generate</button>
-                </Link>
+                {/* </Link> */}
               </div>
             ))}
           </div>
