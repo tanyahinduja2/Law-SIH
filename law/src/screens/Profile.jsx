@@ -1,48 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import "../css/profile.css";
 import Notes from "../screens/Notes.jsx";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  doc,
-  getDoc,
-} from "firebase/firestore";
+import { UserContext } from "../App";
 
 const Profile = () => {
   const auth = getAuth();
-  const db = getFirestore();
-  const [user, setUser] = useState(null);
+  const user = useContext(UserContext);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (authUser) => {
-      if (authUser) {
-        const db = getFirestore();
-        const userDocRef = doc(db, "users", authUser.uid);
-
-        try {
-          const userDocSnapshot = await getDoc(userDocRef);
-          if (userDocSnapshot.exists()) {
-            setUser(userDocSnapshot.data());
-          } else {
-            console.error("User data not found in Firestore");
-          }
-        } catch (error) {
-          console.error("Error fetching user data:", error);
-        }
-      } else {
-        setUser(null);
-      }
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  }, []);
 
   return (
     <>

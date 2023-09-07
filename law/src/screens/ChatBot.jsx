@@ -1,44 +1,20 @@
-import React from "react";
+import Reactm,{useContext} from "react";
 import { useState, useEffect } from "react";
 import Cookies from "universal-cookie";
 import Chat from "../firebase/Chat";
 import { useNavigate } from "react-router-dom";
-import { getFirestore, doc, getDoc } from "firebase/firestore";
 import Assistance from "./Assistance";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { UserContext } from "../App";
 const cookies = new Cookies();
 
 function ChatBot() {
   const auth = getAuth();
-  const [user, setUser] = useState(null);
+  const user = useContext(UserContext);
+  const navigate = useNavigate();
   const [isInChat, setIsInChat] = useState(null);
   const [room, setRoom] = useState("");
-  const navigate = useNavigate();
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (authUser) => {
-      if (authUser) {
-        const db = getFirestore();
-        const userDocRef = doc(db, "users", authUser.uid);
-
-        try {
-          const userDocSnapshot = await getDoc(userDocRef);
-          if (userDocSnapshot.exists()) {
-            setUser(userDocSnapshot.data());
-          } else {
-            console.error("User data not found in Firestore");
-          }
-        } catch (error) {
-          console.error("Error fetching user data:", error);
-        }
-      } else {
-        setUser(null);
-      }
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  
   if (!user) {
     return (
       <>
