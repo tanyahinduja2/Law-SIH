@@ -1,4 +1,4 @@
-.rectangle{
+/* .rectangle{
   height: 120px;
   width: 95%;
   margin : auto;
@@ -40,4 +40,22 @@
  .chat:hover{
   color: #042699;
   border: 2px solid #042699;
- }
+ } */
+
+ .assistance__container {
+  margin: 70px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.assistance__card {
+  flex: 0 0 calc(33% - 50px); 
+  max-width: calc(33% - 50px); 
+  height: 254px;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+}
