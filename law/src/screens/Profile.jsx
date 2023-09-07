@@ -16,8 +16,12 @@ const Profile = () => {
         {user ? (
           <>
             <div>
-              <p>Welcome, {user.name}</p>
-              <button onClick={() => auth.signOut()}>Sign out</button>
+              <p style={{position:"absolute",top:"309px",left:"126px"}}>Welcome, {user.name}</p>
+              <button onClick={() => auth.signOut()} style={{position:"absolute",top:"30px",right:"22px",color:"white",background:"#042699",margin: "auto",
+    border: "none",
+    height: "40px",
+    width: "90px",borderRadius:"5px"
+    }}>Logout</button>
             </div>
             <div class="wrapper">
               <aside class="aside">
