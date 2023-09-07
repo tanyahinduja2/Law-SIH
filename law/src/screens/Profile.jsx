@@ -16,12 +16,15 @@ const Profile = () => {
         {user ? (
           <>
             <div>
-              <p style={{position:"absolute",top:"309px",left:"126px"}}>Welcome, {user.name}</p>
-              <button onClick={() => auth.signOut()} style={{position:"absolute",top:"30px",right:"22px",color:"white",background:"#042699",margin: "auto",
+              <p style={{position:"absolute",top:"309px",left:"124px"}}>Welcome, {user.name}</p>
+              <p style={{position:"absolute", top:"345px",left:"124px"}}>&#9993; : {user.email}</p>
+              <p style={{position:"absolute", top:"381px",left:"124px"}}>&#9742; : {user.phoneNumber}</p>
+              <p style={{position:"absolute", top:"417px",left:"124px"}}><i class='fa fa-legal'></i> : {user.expertise}</p>
+              {/* <button onClick={() => auth.signOut()} style={{position:"absolute",top:"30px",right:"22px",color:"white",background:"#042699",margin: "auto",
     border: "none",
     height: "40px",
     width: "90px",borderRadius:"5px"
-    }}>Logout</button>
+    }}>Logout</button> */}
             </div>
             <div class="wrapper">
               <aside class="aside">
