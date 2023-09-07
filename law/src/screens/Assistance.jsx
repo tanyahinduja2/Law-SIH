@@ -1,27 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../css/chat.css";
-import pfp from '../illustrations/pfp.webp'
+import pfp from "../illustrations/pfp.webp";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  collection,
+  getDocs,
+} from "firebase/firestore";
+
 export default function Assistance() {
+  const [usersData, setUsersData] = useState([]);
+  useEffect(() => {
+    const db = getFirestore();
+    const usersCollectionRef = collection(db, "users");
+
+    getDocs(usersCollectionRef)
+      .then((querySnapshot) => {
+        const userDataArray = [];
+        querySnapshot.forEach((doc) => {
+          const userData = doc.data();
+          if (userData.expert) {
+            userDataArray.push(userData);
+          }
+        });
+        setUsersData(userDataArray);
+      })
+      .catch((error) => {
+        console.error("Error fetching documents: ", error);
+      });
+  }, []);
+  console.log(usersData);
   return (
     <>
-      {/* <div className="rectangle">
-        <div className="pfp"> <img className="img1" src={pfp} alt="" /></div>
-        <div className="name">
-          Varun Jajoo
-          <div className="expertise">Divorce Lawyer</div>
-        </div>
-        <button
-          className="btn chat"
-        >
-          Chat
-        </button>
-      </div> */}
       <div className="assistance__container">
-      <div class="assistance__card"></div>
-      <div class="assistance__card"></div>
-      <div class="assistance__card"></div>
-      <div class="assistance__card"></div>
-      
+        {usersData.map((expert, id) => (
+          <>
+            <div className="assistance__card">{expert.name}{expert.id}</div>
+          </>
+        ))}
       </div>
     </>
   );
