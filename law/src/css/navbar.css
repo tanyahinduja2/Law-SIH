@@ -1,0 +1,28 @@
+.getstarted{
+    background-color: #042699;
+    color: white;
+    margin: auto;
+   border: none;
+   height: 40px;
+   width: 70px;
+   border-radius: 5px;
+}
+/* .getstarted:hover{
+    color: #042699;
+} */
+.navbar-nav{
+   margin-left: 25vw;
+}
+.nav-item{
+    margin-right: 10vh;
+}
+.navbar-brand{
+    margin: 0 0 0 5vw;
+    font-size: 32px;
+    font-weight: bolder;
+}
+.navbar{
+    height: 100px;
+    font-family:'poppins', sans-serif;
+    line-height: 24px;
+}
