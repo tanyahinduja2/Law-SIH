@@ -12,7 +12,8 @@
     width: 100px;
     height: 254px;
     border-radius: 10px;
-    background: #e0e0e0;
+    /* background: #e0e0e0; */
+    background-image: linear-gradient(#071c7b, #bbf3f9);
     flex:0 0 35%;
     box-shadow: 15px 15px 30px #bebebe,
                -15px -15px 30px #ffffff;
@@ -20,11 +21,27 @@
     position: relative;
     transform-style: preserve-3d;
     cursor: pointer;
-    transition: transform 650ms;
+    transition: transform 1000ms;
 }
 
 .card-1:hover {
     transform: rotateY(180deg);
+}
+
+.card-11 {
+    background-image: linear-gradient(#0093E9, #a1fef3);
+}
+
+.card-2 {
+    background-image: linear-gradient(#0360f5, #b8eaf8);
+}
+
+.card-3 {
+    background-image: linear-gradient(#b4baf4, #6cd4f1)
+}
+
+.card-4 {
+    background-image: linear-gradient(#7bc6dc, #ABE9CD);
 }
 
 .card-front, 
@@ -35,7 +52,7 @@
     justify-content: center;
     font-weight: 400;
     font-size: 18px;
-    color: #042699;
+    color: #ffffff;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position: absolute;
@@ -55,17 +72,16 @@
 
 .card-back p{
     font-weight: 600;
-    color: #042699;
+    color: #ffffff;
 }
 
 .flip-button {
-    border: none;
     outline: none;
-    background: #1d39c4;
-    color: #fff;
+    /* background: #1d39c4;
+    color: #fff; */
     border-radius: 10px;
-    max-width: 120px;
-    width: 100%;
+    width: 120px;
+    /* width: 100%; */
     height: 40px;
     display: flex;
     justify-content: center;
@@ -76,6 +92,10 @@
     border: 1px solid #1d39c4;
     position: absolute;
     bottom: 36px;
+    background-color: #ffffff;
+    border: 0px solid #1d39c4;
+    color: #042699;
+    transition: transform 0.2s;
 }
 
 .flip-button span {
@@ -86,6 +106,7 @@
 
 .flip-button:hover {
     background-color: #ffffff;
-    border: 1px solid #1d39c4;
-    color: #042699
+    border: 0px solid #1d39c4;
+    color: #042699;
+    transform: scale(1.25);
 }
