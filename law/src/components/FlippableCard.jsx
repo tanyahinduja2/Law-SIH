@@ -10,7 +10,7 @@ const FlippableCard = () => {
     };
     return (
         <div className="flippable-card-container">
-            <div className="cards">
+            <div className="cards1">
                 <div className="card-inner card-1" >
                     <div className="card-front">Need legal advise from our experts?</div>
                     <div className="card-back">
@@ -22,7 +22,7 @@ const FlippableCard = () => {
                     </div>
                 </div>
             </div>
-            <div className="cards">
+            <div className="cards1">
                 <div className="card-inner card-2">
                     <div className="card-front">Searching for lawyers in your city?</div>
                     <div className="card-back">
@@ -34,7 +34,7 @@ const FlippableCard = () => {
                     </div>
                 </div>
             </div>
-            <div className="cards">
+            <div className="cards1">
                 <div className="card-inner card-3">
                     <div className="card-front">Want to schedule a face-to-face chat with our experts?</div>
                     <div className="card-back">
@@ -46,7 +46,7 @@ const FlippableCard = () => {
                     </div>
                 </div>
             </div>
-            <div className="cards">
+            <div className="cards1">
                 <div className="card-inner card-4">
                     <div className="card-front"></div>
                     <div className="card-back">

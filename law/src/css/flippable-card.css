@@ -7,7 +7,7 @@
     margin : 40px 50px;
 }
 
-.cards {
+.cards1 {
     width: 100%;
     height: 254px;
     perspective: 1000px;
@@ -27,7 +27,7 @@
     cursor: pointer;
 }
 
-.cards:hover .card-inner {
+.cards1:hover .card-inner {
     transform: rotateY(180deg);
 }
 
