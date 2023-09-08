@@ -12,7 +12,7 @@ const Component = styled.div`
 const toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
     ['blockquote', 'code-block'],
-  
+   
     [{ 'header': 1 }, { 'header': 2 }],               // custom button values
     [{ 'list': 'ordered'}, { 'list': 'bullet' }],
     [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
@@ -31,7 +31,7 @@ const toolbarOptions = [
 
 const Document = () => {
     const [quill, setQuill] = useState(null);
-    const [content, setContent] = useState(""); // Initialize the state for content
+    const [content, setContent] = useState("hello \n hiid"); // Initialize the state for content
     const { id } = useParams();
 
     useEffect(() => {
@@ -42,7 +42,7 @@ const Document = () => {
             });
 
             // Set initial content when creating the Quill instance
-            const initialContent = '<p>This is some initial content.</p>';
+            const initialContent = '<p>This is some  \n initial content.</p>';
             quillInstance.clipboard.dangerouslyPasteHTML(initialContent);
 
             setQuill(quillInstance);
