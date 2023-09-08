@@ -14,7 +14,7 @@ import SeekAssistance from "./screens/SeekAssistance";
 import Meet from "./screens/Meet";
 import Footer from "./components/Footer";
 import ChatBot from "./screens/ChatBot";
-import { Document } from "./screens/Document";
+import  Document from "./screens/Document";
 export const UserContext = createContext(null);
 
 function App() {
