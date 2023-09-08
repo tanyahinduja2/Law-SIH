@@ -11,22 +11,22 @@ const Component = styled.div`
 
 const toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-  ['blockquote', 'code-block'],
-
-  [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-  [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-  [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-  [{ 'direction': 'rtl' }],                         // text direction
-
-  [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-
-  [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-  [{ 'font': [] }],
-  [{ 'align': [] }],
-
-  ['clean']    
+    ['blockquote', 'code-block'],
+  
+    [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+    [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+    [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+    [{ 'direction': 'rtl' }],                         // text direction
+  
+    [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+  
+    [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+    [{ 'font': [] }],
+    [{ 'align': [] }],
+  
+    ['clean']    
 ];
 
 const Document = () => {
@@ -40,21 +40,26 @@ const Document = () => {
                 theme: 'snow',
                 modules: { toolbar: toolbarOptions }
             });
+
+            // Set initial content when creating the Quill instance
+            const initialContent = '<p>This is some initial content.</p>';
+            quillInstance.clipboard.dangerouslyPasteHTML(initialContent);
+
             setQuill(quillInstance);
         }
     }, [quill]);
 
     useEffect(() => {
-      if (quill !== null) {
-          // Attach an event listener to capture changes in Quill
-          quill.on('text-change', (delta, oldDelta, source) => {
-              if (source === 'user') {
-                  const editorContent = quill.root.innerHTML;
-                  setContent(editorContent);
-              }
-          });
-      }
-  }, [quill]);
+        if (quill !== null) {
+            // Attach an event listener to capture changes in Quill
+            quill.on('text-change', (delta, oldDelta, source) => {
+                if (source === 'user') {
+                    const editorContent = quill.root.innerHTML;
+                    setContent(editorContent);
+                }
+            });
+        }
+    }, [quill]);
 console.log(content)
     return (
         <Component>
