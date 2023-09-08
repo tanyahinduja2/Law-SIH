@@ -12,8 +12,7 @@ import privacy from "../icons/privacy.png";
 import employement from "../icons/employment.png";
 import { FloatInput } from "../components/FloatInput";
 
-export default function Templates(props) {
-  
+export default function Templates() {
   const [selectedCardIndex, setSelectedCardIndex] = useState("");
   const [floatinput,setFloatInput]=useState(false)
   const [cards] = useState([
@@ -87,7 +86,7 @@ export default function Templates(props) {
 
           </div>
           {
-                !floatinput?<></>:<FloatInput/>
+                !floatinput?<></>:<FloatInput card={selectedCardIndex} />
                }
         </div>
       </section>
