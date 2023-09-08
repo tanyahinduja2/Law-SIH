@@ -60,6 +60,53 @@
   box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
 }
 .fullchat{
-  height: 100vh;
-  background-color: #afe0fd;
+  padding: 40px 0;
+  height: 440px;
+  background-color: #dff3ff;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.inputchat{
+ position: relative;
+ bottom: 30px;
+ padding: 20px;
+ margin-left: 2px;
+ left: 0;
+ width: 99.8%;
+}
+.inputchat:focus{
+  border: 2px solid #042699;
+  outline: none;
+}
+.send{
+  position: absolute;
+  padding: 10px 15px;
+  left: 1100px;
+  bottom: 29px;
+  background-color: #042699;
+  color: #ffffff;
+}
+.send:hover{
+  color: #042699;
+  background-color: #fff;
+}
+.messagetxt{
+  padding: 10px 10px;
+  margin: 5px 5px;
+  display: inline-block;
+  max-height: 105px;
+  
+  border-radius: 5px;
+  color: #fff;
+}
+.fullchat::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+.fullchat::-webkit-scrollbar{
+  width: 8px;
+  
+}
+.fullchat::-webkit-scrollbar-thumb{
+  background-color: grey;
+  border-radius: 6px ;
 }

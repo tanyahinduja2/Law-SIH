@@ -1,0 +1,15 @@
+body{
+    cursor: url();
+}
+body::-webkit-scrollbar {
+    width: 12px; 
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #042699; 
+    border-radius: 6px;
+  }
+  body::-webkit-scrollbar-track {
+    background-color: #e7f3fa;
+  }
+  

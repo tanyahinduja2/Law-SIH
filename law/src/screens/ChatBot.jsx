@@ -57,9 +57,13 @@ function ChatBot() {
       {!isInChat ? (
         <div className="room">
           <label> Type room name: </label>
-          <input value="divorce" />
+          <input onChange={(e)=>{setRoom(e.target.value)}} />
           <button
             onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth" // Optional: Adds smooth scrolling animation
+              });
               setIsInChat(true);
             }}
           >
