@@ -34,7 +34,7 @@ export default function Assistance() {
   return (
     <>
       <div className="assistance__container">
-        {expertsData.map((expert, id) => (
+        {expertsData.map((expert, i) => (
           <>
             <div className="assistance__card">{expert.name}{expert.id}</div>
           </>
