@@ -86,7 +86,7 @@ export default function Templates() {
 
           </div>
           {
-                !floatinput?<></>:<FloatInput card={selectedCardIndex} />
+                !floatinput?<></>:<FloatInput card={selectedCardIndex} float={setFloatInput} />
                }
         </div>
       </section>

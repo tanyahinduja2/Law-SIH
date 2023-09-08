@@ -7,7 +7,15 @@ export const Document = () => {
   console.log(title,prompt)
   return (
     <div className='textarea'>
-    
+    {/* <iframe
+  src="https://app.box.com/embed/sign/document/f14d7098-a331-494b-808b-79bc7f3992a3/f14d7098-a331-494b-808b-79bc7f3992a4"
+  width="400"
+  height="600"
+  frameborder="0"
+  allowfullscreen
+  webkitallowfullscreen
+  msallowfullscreen
+></iframe> */}
     </div>
   )
 }

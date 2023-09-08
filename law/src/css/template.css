@@ -96,6 +96,7 @@ h1{
 }
 #input1{
    position: fixed;
+   display: flex;
     left: 18%;
     top: 45%;
 }
