@@ -94,3 +94,19 @@ h1{
     height: 24px;
     width: 24px;
 }
+#input1{
+   position: fixed;
+    left: 18%;
+    top: 45%;
+}
+#input2{
+    position: relative;
+    background-color: lightgrey;
+    opacity: 0.95;
+    backdrop-filter: blur(100px);
+}
+.search1{
+    font-size: 25px;
+    right: 30px;
+    top: 13px;
+}

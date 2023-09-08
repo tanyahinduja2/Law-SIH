@@ -57,7 +57,7 @@ function ChatBot() {
       {!isInChat ? (
         <div className="room">
           <label> Type room name: </label>
-          <input onChange={(e)=>{setRoom(e.target.value)}} />
+          <input  onChange={(e)=>{setRoom(e.target.value)}} />
           <button
             onClick={() => {
               window.scrollTo({

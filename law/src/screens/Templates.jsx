@@ -10,8 +10,12 @@ import termination from "../icons/termination.png";
 import poa from "../icons/poa.png";
 import privacy from "../icons/privacy.png";
 import employement from "../icons/employment.png";
+import { FloatInput } from "../components/FloatInput";
 
-export default function Templates() {
+export default function Templates(props) {
+  
+  const [selectedCardIndex, setSelectedCardIndex] = useState("");
+  const [floatinput,setFloatInput]=useState(false)
   const [cards] = useState([
     {
       icon: nda,
@@ -59,6 +63,7 @@ export default function Templates() {
       text: `An employment agreement is a contract between an employer and employee that outlines the terms and conditions of the working relationship.`,
     },
   ]);
+  console.log(selectedCardIndex)
   return (
     <div>
       <section>
@@ -71,11 +76,19 @@ export default function Templates() {
                 <h4>{card.title}</h4>
                 <p>{card.text}</p>
                 {/* <Link to={`/templates/${encodeURIComponent(card.title)}`}> */}
-                <button className="btn card-btn">Generate</button>
+                <button className="btn card-btn" onClick={()=>{
+                  setFloatInput(true)
+                  setSelectedCardIndex(encodeURIComponent(card.title))
+                }}>Generate</button>
+              
                 {/* </Link> */}
               </div>
             ))}
+
           </div>
+          {
+                !floatinput?<></>:<FloatInput/>
+               }
         </div>
       </section>
     </div>
