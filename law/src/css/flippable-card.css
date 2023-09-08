@@ -9,9 +9,9 @@
 
 .cards1 {
     width: 100%;
-    height: 254px;
+    height: 294px;
     perspective: 1000px;
-    flex: 0 0 35%;
+    flex: 0 0 45%;
 }
 
 .card-inner {
@@ -20,7 +20,7 @@
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.999s;
-    border-radius: 10px;
+    border-radius: 24px;
     box-shadow: 15px 15px 30px #bebebe,
                -15px -15px 30px #ffffff;
                padding: 0px;
@@ -45,7 +45,7 @@
     display: flex;
     justify-content: center;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 36px;
     color: #ffffff;
     transform: rotateY(0deg);
     text-align: center;
@@ -56,7 +56,7 @@
     display: flex;
     justify-content: center;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 32px;
     color: #ffffff;
     transform: rotateY(180deg);
     text-align: center;
@@ -81,12 +81,13 @@
 .card-back p{
     font-weight: 600;
     color: #ffffff;
+    font-size: 20px;
 }
 
 .flip-button {
     outline: none;
     border-radius: 10px;
-    width: 120px;
+    width: 132px;
     height: 40px;
     display: flex;
     justify-content: center;

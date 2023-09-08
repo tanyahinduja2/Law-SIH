@@ -11,6 +11,7 @@ import {
 
 export default function Assistance() {
   const [expertsData, setExpertData] = useState([]);
+  const colours = ['#0A2647', '#205295', '#144272', '#2C74B3'];
   useEffect(() => {
     const db = getFirestore();
     const usersCollectionRef = collection(db, "users");
@@ -36,7 +37,19 @@ export default function Assistance() {
       <div className="assistance__container">
         {expertsData.map((expert, i) => (
           <>
-            <div className="assistance__card">{expert.name}{expert.id}</div>
+            <div className="assistance__card">
+              <div className="expert-top" style={{backgroundColor: `${colours[i]}`}}>
+                <h2 className="expert-name">{expert.name}</h2>
+                <img src={expert.photoURL} className="expert-img"></img>
+              </div>
+              <div className="expert-bottom">
+                <h3 className="expert-expertise" style={{color: `${colours[i]}`}}>{expert.expertise}</h3>
+                <p className="expert-mail" style={{color: `${colours[i]}`}}>{expert.email}</p>
+                <button type="submit" className="expert-btn" style={{backgroundColor: `${colours[i]}`}}>
+                  <span>Chat</span>
+                </button>
+              </div>
+            </div>
           </>
         ))}
       </div>
