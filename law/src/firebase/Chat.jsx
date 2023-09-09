@@ -56,6 +56,7 @@ export default function Chat(props) {
     e.preventDefault();
     if (newmsg === "") return;
     let isExpert = false;
+    let photoURL =""
 
   if (user.expert) {
     const userDocRef = doc(db, "users", user.id);
@@ -64,6 +65,7 @@ export default function Chat(props) {
     if (userDocSnapshot.exists()) {
       const userData = userDocSnapshot.data();
       isExpert = userData.expert || false;
+      photoURL = userData.photoURL || ""; 
     }
   }
 
@@ -73,6 +75,7 @@ export default function Chat(props) {
       user: auth.currentUser.displayName,
       room,
       expert: isExpert,
+      photoURL:photoURL,
     });
 
     setnew("");
@@ -121,6 +124,7 @@ export default function Chat(props) {
                   <span> {message.user}
                   {message.expert  ? "(expert)" : ""}</span>
                 </div>{" "}
+                {user.name!==message.user? <img src={user.photoURL} alt="" style={{height:"30px" ,width:"30px",borderRadius:"50px"}}/>:<></>}
                 <div
                   className="messagetxt"
                   style={{
@@ -129,8 +133,11 @@ export default function Chat(props) {
                       user.name === message.user ? "#042699" : "grey",
                   }}
                 >
-                  {message.text}
+
+                  {message.text} 
                 </div>
+                {user.name==message.user? <img src={user.photoURL} alt="" style={{height:"30px" ,width:"30px",borderRadius:"50px"}}/>:<></>}
+               
                 
               </div>
             ))}
