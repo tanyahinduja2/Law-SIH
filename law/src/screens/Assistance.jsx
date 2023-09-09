@@ -9,7 +9,8 @@ import {
   getDocs,
 } from "firebase/firestore";
 
-export default function Assistance() {
+export default function Assistance(props) {
+  const {handleCHAT} =props
   const [expertsData, setExpertData] = useState([]);
   const colours = ['#0A2647', '#205295', '#144272', '#2C74B3'];
   useEffect(() => {
@@ -45,7 +46,7 @@ export default function Assistance() {
               <div className="expert-bottom">
                 <h3 className="expert-expertise" style={{color: `${colours[i]}`}}>{expert.expertise}</h3>
                 <p className="expert-mail" style={{color: `${colours[i]}`}}>{expert.email}</p>
-                <button type="submit" className="expert-btn" style={{backgroundColor: `${colours[i]}`}}>
+                <button onClick={()=>{handleCHAT()}} type="submit" className="expert-btn" style={{backgroundColor: `${colours[i]}`}}>
                   <span>Chat</span>
                 </button>
               </div>

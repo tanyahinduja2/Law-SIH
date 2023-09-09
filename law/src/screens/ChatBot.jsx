@@ -1,10 +1,9 @@
-import Reactm,{useContext} from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Cookies from "universal-cookie";
 import Chat from "../firebase/Chat";
 import { useNavigate } from "react-router-dom";
 import Assistance from "./Assistance";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { UserContext } from "../App";
 const cookies = new Cookies();
 
@@ -13,8 +12,9 @@ function ChatBot() {
   const user = useContext(UserContext);
   const navigate = useNavigate();
   const [isInChat, setIsInChat] = useState(null);
-  const [room, setRoom] = useState("");
-  
+  const [chattingWith, setChattingWith] = useState(""); // Store the username of the user you are chatting with
+  const [room, setRoom] = useState(``);
+
   if (!user) {
     return (
       <>
@@ -44,34 +44,37 @@ function ChatBot() {
       </>
     );
   }
-
+  const handleCHAT=() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+    setIsInChat(true);
+    setChattingWith("OtherUser"); 
+  }
   return (
     <>
-    {isInChat?(
-      <div></div>
-    ):<div>
-    <Assistance />
-  </div>}
-      
+      {isInChat ? (
+        <div></div>
+      ) : (
+        <div>
+          <Assistance handleCHAT={handleCHAT}/>
+        </div>
+      )}
 
       {!isInChat ? (
         <div className="room">
           <label> Type room name: </label>
-          <input  onChange={(e)=>{setRoom(e.target.value)}} />
+          <input value={room} onChange={(e) => setRoom(e.target.value)} />
           <button
-            onClick={() => {
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth" // Optional: Adds smooth scrolling animation
-              });
-              setIsInChat(true);
-            }}
+            onClick={handleCHAT}
           >
             Enter Chat
           </button>
         </div>
       ) : (
-        <Chat room={room} />
+        // Render the Chat component with room and chattingWith props
+        <Chat room={room} chattingWith={chattingWith} />
       )}
     </>
   );

@@ -28,30 +28,22 @@ const toolbarOptions = [
   [{ align: [] }],
 
   ["clean"],
-  ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-    ['blockquote', 'code-block'],
    
-    [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-    [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-    [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-    [{ 'direction': 'rtl' }],                         // text direction
-  
-    [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-  
-    [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-    [{ 'font': [] }],
-    [{ 'align': [] }],
-  
-    ['clean']    
 ];
 
 const Document = () => {
   const [quill, setQuill] = useState(null);
   const [content, setContent] = useState(""); // Initialize the state for content
   const { title, prompt } = useParams();
-  const [initialContent, setInitialContent] = useState("heeloo /n bye");
+  const [initialContent, setInitialContent] = useState(`
+
+  <br>Dear [Name],<br><br>
+  This letter is to confirm that [Name] hereby assigns all rights, title, and interest in and to the copyright of [Description of Work] (the “Work”) to [Name of Assignee].<br><br>
+  The Work was created by [Name] on [Date]. [Name] hereby represents and warrants that [he/she] is the sole author and owner of the Work and that [he/she] has not assigned or otherwise transferred any rights in the Work to any other person or entity.<br><br>
+  [Name] hereby agrees to execute any additional documents and perform any additional acts that may be necessary to vest in [Name of Assignee] all right, title, and interest in and to the copyright of the Work.<br><br>
+  Sincerely,<br><br>
+  [Name]
+  `);
 
   useEffect(() => {
     if (quill === null) {
@@ -62,8 +54,8 @@ const Document = () => {
       console.log(initialContent);
 
       // Encode the initialContent and then paste it into the editor
-      const encodedContent = encodeURIComponent(initialContent);
-      quillInstance.clipboard.dangerouslyPasteHTML(encodedContent);
+      // const encodedContent = encodeURIComponent(initialContent);
+      quillInstance.clipboard.dangerouslyPasteHTML(initialContent);
 
       setQuill(quillInstance);
     }
@@ -77,7 +69,7 @@ const Document = () => {
         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiN2E0ODk0MjktZGIwMS00YzMyLTgwNmYtZmI3YzgyMzkzMWYzIiwidHlwZSI6ImFwaV90b2tlbiJ9.zb2xQc9BJybAGp0EX3fDuDjtvTB-_Uqe5NZ16wDW9Hg",
     },
     data: {
-      providers: "google",
+      providers: "openai",
       text: prompt,
       temperature: 0.2,
       max_tokens: 250,
@@ -88,12 +80,12 @@ const Document = () => {
     axios
       .request(options)
       .then((response) => {
-        console.log(response.data.google.generated_text);
-        setInitialContent(response.data.google.generated_text);
+        console.log(response.data.openai.generated_text);
+        setInitialContent(response.data.openai.generated_text);
 
         // Decode and set the editor content here
-        const decodedContent = decodeURIComponent(response.data.google.generated_text);
-        quill.clipboard.dangerouslyPasteHTML(decodedContent);
+        // const decodedContent = decodeURIComponent(response.data.google.generated_text);
+        quill.clipboard.dangerouslyPasteHTML(response.data.openai.generated_text);
       })
       .catch((error) => {
         console.error(error);

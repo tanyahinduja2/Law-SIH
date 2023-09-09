@@ -65,6 +65,7 @@
 .fullchat {
   padding: 40px 0;
   height: 440px;
+  width: 100%;
   background-color: #dff3ff;
   overflow: scroll;
   overflow-x: hidden;
@@ -180,4 +181,31 @@
 
 .expert-btn span {
   font-size: 20px;
+}
+ 
+.screens{
+  height: 300px;
+  width:100%
+}
+.flexy{
+  display:flex
+}
+.halfchat{
+  width: 30%;
+  height: 410px;
+  background-color: rgb(176, 183, 255);
+  border-radius: 0 10px 10px 0px;
+}
+.namesdiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+background-color: #042699;
+
+  margin: 3% 0 3% 5%;
+  width: 90%;
+  height: 50px;
+  border-radius: 10px;
+
 }
