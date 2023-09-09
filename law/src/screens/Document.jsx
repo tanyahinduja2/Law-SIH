@@ -81,11 +81,12 @@ const Document = () => {
       .request(options)
       .then((response) => {
         console.log(response.data.openai.generated_text);
-        setInitialContent(response.data.openai.generated_text);
+        // setInitialContent(response.data.openai.generated_text);
 
         // Decode and set the editor content here
         // const decodedContent = decodeURIComponent(response.data.google.generated_text);
-        quill.clipboard.dangerouslyPasteHTML(response.data.openai.generated_text);
+        quill.setText(response.data.openai.generated_text)
+        // quill.clipboard.dangerouslyPasteHTML(response.data.openai.generated_text);
       })
       .catch((error) => {
         console.error(error);
