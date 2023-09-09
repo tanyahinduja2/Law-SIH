@@ -60,24 +60,79 @@ const Meet = (props) => {
               <h4 className="meet-expertise">{expert.expertise}</h4>
               <p className="meet-mail">{expert.email}</p>
               <button type="submit" className="meet-btn" style={{ backgroundColor: `${colours[i]}` }}>
-                <span>Schedule</span>
+                <span onClick={()=>setIsOpen(true)}>Schedule</span>
+                 {/* <button
+          style={{ display: 'block', margin: '0 auto' }}
+          onClick={() => setIsOpen(true)}
+        >
+          Schedule
+        </button>> */}
               </button>
             </div>
           </>
         ))}
       </div>
       <div className='meet-container'>
-        <button
-          style={{ display: 'block', margin: '0 auto' }}
-          onClick={() => setIsOpen(true)}
-        >
-          Custom Button
-        </button>
+       
 
         {eventTime && <p>Event Time: {eventTime}</p>} {/* Display event time */}
 
         <PopupModal
           url="https://calendly.com/varun-jajoo18"
+          pageSettings={{
+            backgroundColor: 'ffffff',
+            hideEventTypeDetails: true,
+            hideLandingPageDetails: false,
+            primaryColor: '00a2ff',
+            textColor: '4d5055',
+          }}
+          utm={props.utm}
+          prefill={{
+            name: "Your Name",
+            email: "your@email.com",
+          }}
+          onModalClose={() => setIsOpen(false)}
+          open={isOpen}
+          rootElement={document.getElementById('root')}
+        />
+         <PopupModal
+          url="https://calendly.com/sanjudumy"
+          pageSettings={{
+            backgroundColor: 'ffffff',
+            hideEventTypeDetails: true,
+            hideLandingPageDetails: false,
+            primaryColor: '00a2ff',
+            textColor: '4d5055',
+          }}
+          utm={props.utm}
+          prefill={{
+            name: "Your Name",
+            email: "your@email.com",
+          }}
+          onModalClose={() => setIsOpen(false)}
+          open={isOpen}
+          rootElement={document.getElementById('root')}
+        />
+          <PopupModal
+          url="https://calendly.com/sanjanalalwani610"
+          pageSettings={{
+            backgroundColor: 'ffffff',
+            hideEventTypeDetails: true,
+            hideLandingPageDetails: false,
+            primaryColor: '00a2ff',
+            textColor: '4d5055',
+          }}
+          utm={props.utm}
+          prefill={{
+            name: "Your Name",
+            email: "your@email.com",
+          }}
+          onModalClose={() => setIsOpen(false)}
+          open={isOpen}
+          rootElement={document.getElementById('root')}
+        />
+         <PopupModal
+          url="https://calendly.com/610sanjana"
           pageSettings={{
             backgroundColor: 'ffffff',
             hideEventTypeDetails: true,
