@@ -6,8 +6,10 @@ import hassle3 from "../illustrations/hassle3.svg";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
 
 export const Description = () => {
+  const navigate = useNavigate()
   useEffect(()=>{
     Aos.init({duration: 2000});
   },[]);
@@ -16,9 +18,9 @@ export const Description = () => {
       <div>
         <div data-aos="fade-down"  className="title">Hassle-free Legal Documents</div>
         <div className="title-content">
-          Looking to register a company or set up a trust fund? Constitute makes
+          Looking to register a company or set up a trust fund? InteLegal makes
           tracking your paper trail both simple and seamless. And that’s just
-          the beginning. Our services go far beyond registration. Constitute is
+          the beginning. Our services go far beyond registration. InteLegal is
           here to guide you through a variety of legal structures.
         </div>
       </div>
@@ -35,7 +37,7 @@ export const Description = () => {
             Companies
           </div>
           <div style={{ paddingBottom: "20px", fontSize: "19px" }}>
-            Constitute offers fast, efficient online sign-ups with in-line ABN
+            InteLegal offers fast, efficient online sign-ups with in-line ABN
             and TFN registrations.
           </div>
           <ul style={{ paddingBottom: "40px", fontSize: "19px" }}>
@@ -43,7 +45,7 @@ export const Description = () => {
             <li>Quick turnaround time, to get your business up and running</li>
             <li>Pre-verified documents</li>
           </ul>
-          <button className="features-button">
+          <button className="features-button" onClick={() => navigate('/aboutus')}>
             <span>LEARN MORE</span>
             <AiOutlineArrowRight style={{}} />
           </button>
@@ -61,7 +63,7 @@ export const Description = () => {
             Trusts
           </div>
           <div style={{ paddingBottom: "20px", fontSize: "19px" }}>
-            Constitute offers our clients access to a wide array of high-quality
+            InteLegal offers our clients access to a wide array of high-quality
             trusts, all with flexible deed arrangements.
           </div>
           <ul style={{ paddingBottom: "40px", fontSize: "19px" }}>
@@ -69,7 +71,7 @@ export const Description = () => {
             <li>Experienced trust advisers</li>
             <li>Flexible deed arrangements</li>
           </ul>
-          <button className="features-button">
+          <button className="features-button" onClick={() => navigate('/aboutus')}>
             <span>LEARN MORE</span>
             <AiOutlineArrowRight style={{}} />
           </button>
@@ -89,7 +91,7 @@ export const Description = () => {
             SMSFs
           </div>
           <div style={{ paddingBottom: "20px", fontSize: "19px" }}>
-            Constitute helps trustees and advisers fulfill the regulatory
+            InteLegal helps trustees and advisers fulfill the regulatory
             requirements of running a self-managed super fund.
           </div>
           <ul style={{ paddingBottom: "40px", fontSize: "19px" }}>
@@ -97,13 +99,13 @@ export const Description = () => {
             <li>Service for both advisers and trustees</li>
             <li>Expert fund advice</li>
           </ul>
-          <button className="features-button">
+          <button className="features-button" onClick={() => navigate('/aboutus')}>
             <span>LEARN MORE</span>
             <AiOutlineArrowRight style={{}} />
           </button>
         </div>
       </div>
-      <div data-aos="fade-down" className="constitute">Why Choose Constitute</div>
+      <div data-aos="fade-down" className="constitute">Why Choose InteLegal</div>
       <br />
       <br />
       <div data-aos="fade-up" className="constitutebox">
@@ -118,7 +120,7 @@ export const Description = () => {
           <br />
           <h2>PERSONALISED SERVICE</h2>
           <p>
-            Constitute advisers take time to get to know your project.They're
+            InteLegal advisers take time to get to know your project.They're
             fully decdicated to offering the highest level of customer service.
           </p>
         </div>
