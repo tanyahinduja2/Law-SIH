@@ -193,32 +193,35 @@ const Document = () => {
   return (
     <>
       <div>
-        <button onClick={handleClick} style={{position:"absolute", top:"309px", left:"90px"}}>Generate Text</button>
-        <label style={{position:"absolute",top:"180px", left:"20px"}}>
+        <button onClick={handleClick} style={{position:"absolute", top:"359px", left:"75px", backgroundColor: "#ffffff", borderRadius: "10px", border: "2px solid #042699", color: "#042699", height: "40px"}}>Generate Text</button>
+        <label style={{position:"absolute",top:"180px", left:"20px", color: "#042699", fontWeight: "600"}}>
           From:  
           <input
             type="text"
             value={fromValue}
             onChange={(e) => setFromValue(e.target.value)}
+            style={{border: "1px solid #042699", borderRadius: "10px", width: "150px", height: "40px", marginLeft: "10px"}}
           />
         </label>
-        <label style={{position:"absolute",top:"220px", left:"41px"}}>
+        <label style={{position:"absolute",top:"240px", left:"41px", color: "#042699", fontWeight: "600"}}>
           To: 
           <input
             type="text"
             value={toValue}
             onChange={(e) => setToValue(e.target.value)}
+            style={{border: "1px solid #042699", borderRadius: "10px", width: "150px", height: "40px", marginLeft: "10px"}}
           />
         </label>
-        <label style={{position:"absolute",top:"258px", left:"67px"}}>
-          Date :
+        <label style={{position:"absolute",top:"298px", left:"20px", color: "#042699", fontWeight: "600"}}>
+          Date:
           <input
             type="date"
             value={toDate}
             onChange={(e) => setDate(e.target.value)}
+            style={{border: "1px solid #042699", borderRadius: "10px", width: "150px", height: "40px", paddingLeft: "10px", color: "#042699", marginLeft: "10px"}}
           />
         </label>
-        <button onClick={generatePDF} style={{position:"absolute", top:"900px",left:"658px"}} >Download PDF</button>
+        <button onClick={generatePDF} style={{position:"absolute", top:"760px", left:"568px", backgroundColor: "#ffffff", borderRadius: "10px", border: "2px solid #042699", color: "#042699", height: "40px"}} >Download PDF</button>
       </div>
       <Component>
         <Box className="container1" id="container"></Box>
