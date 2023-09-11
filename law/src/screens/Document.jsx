@@ -193,16 +193,16 @@ const Document = () => {
   return (
     <>
       <div>
-        <button onClick={handleClick}>Generate Text</button>
-        <label>
-          From: 
+        <button onClick={handleClick} style={{position:"absolute", top:"309px", left:"90px"}}>Generate Text</button>
+        <label style={{position:"absolute",top:"180px", left:"20px"}}>
+          From:  
           <input
             type="text"
             value={fromValue}
             onChange={(e) => setFromValue(e.target.value)}
           />
         </label>
-        <label>
+        <label style={{position:"absolute",top:"220px", left:"41px"}}>
           To: 
           <input
             type="text"
@@ -210,7 +210,7 @@ const Document = () => {
             onChange={(e) => setToValue(e.target.value)}
           />
         </label>
-        <label>
+        <label style={{position:"absolute",top:"258px", left:"67px"}}>
           Date :
           <input
             type="date"
@@ -218,7 +218,7 @@ const Document = () => {
             onChange={(e) => setDate(e.target.value)}
           />
         </label>
-        <button onClick={generatePDF} >Download PDF</button>
+        <button onClick={generatePDF} style={{position:"absolute", top:"900px",left:"658px"}} >Download PDF</button>
       </div>
       <Component>
         <Box className="container1" id="container"></Box>
