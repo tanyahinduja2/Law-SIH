@@ -5,7 +5,7 @@ import "../index.css"
 const Footer = () => {
     return (
         <div className="footer">
-            <h2 className="footer-logo">Law</h2>
+            <h2 className="footer-logo">InteLegal</h2>
             <div className="footer-ele">
                 <h4>Sitemap</h4>
                 <a href="#">Other Products</a>

@@ -56,29 +56,38 @@ export default function Chat(props) {
     e.preventDefault();
     if (newmsg === "") return;
     let isExpert = false;
-    let photoURL =""
-
-  if (user.expert) {
-    const userDocRef = doc(db, "users", user.id);
-    const userDocSnapshot = await getDoc(userDocRef);
-
-    if (userDocSnapshot.exists()) {
-      const userData = userDocSnapshot.data();
-      isExpert = userData.expert || false;
-      photoURL = userData.photoURL || ""; 
+    let userPhotoURL = "";
+  
+    if (user.expert) {
+      const userDocRef = doc(db, "users", user.id);
+      const userDocSnapshot = await getDoc(userDocRef);
+  
+      if (userDocSnapshot.exists()) {
+        const userData = userDocSnapshot.data();
+        isExpert = userData.expert || false;
+        userPhotoURL = userData.photoURL || "";
+      }
     }
-  }
-
-    await addDoc(messagesRef, {
+  
+    const messageData = {
       text: newmsg,
       createdAt: serverTimestamp(),
       user: auth.currentUser.displayName,
       room,
       expert: isExpert,
-      photoURL:photoURL,
-    });
-
-    setnew("");
+      photoURL: userPhotoURL,
+    };
+  
+    // Create a reference to the "msgs" collection
+    const messagesRef = collection(db, "msgs");
+  
+    try {
+      // Add the message to the "msgs" collection
+      await addDoc(messagesRef, messageData);
+      setnew(""); // Clear the message input field after successful submission
+    } catch (error) {
+      console.error("Error adding message to Firestore:", error);
+    }
   };
   const uniqueOtherUsers = Array.from(new Set(otherUsers));
 
@@ -124,7 +133,7 @@ export default function Chat(props) {
                   <span> {message.user}
                   {message.expert  ? "(expert)" : ""}</span>
                 </div>{" "}
-                {user.name!==message.user? <img src={user.photoURL} alt="" style={{height:"30px" ,width:"30px",borderRadius:"50px"}}/>:<></>}
+                 {/* {user.name!==message.user? <img src={user.photoURL} alt="" style={{height:"30px" ,width:"30px",borderRadius:"50px"}}/>:<></>} */}
                 <div
                   className="messagetxt"
                   style={{
@@ -136,7 +145,7 @@ export default function Chat(props) {
 
                   {message.text} 
                 </div>
-                {user.name==message.user? <img src={user.photoURL} alt="" style={{height:"30px" ,width:"30px",borderRadius:"50px"}}/>:<></>}
+                {/* {user.name==message.user? <img src={user.photoURL} alt="" style={{height:"30px" ,width:"30px",borderRadius:"50px"}}/>:<></>} */}
                
                 
               </div>
