@@ -46,17 +46,17 @@ const FlippableCard = () => {
                     </div>
                 </div>
             </div>
-            <div className="cards1">
+            {/* <div className="cards1">
                 <div className="card-inner card-4">
                     <div className="card-front"></div>
                     <div className="card-back">
-                        {/* Back */}
+                        Back
                         <button type="submit" className="flip-button">
-                            {/* <span>Click me</span> */}
+                            <span>Click me</span>
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

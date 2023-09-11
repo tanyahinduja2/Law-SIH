@@ -64,20 +64,17 @@
 }
 
 .card-1 {
-    background-image: linear-gradient(#0093E9, #a1fef3);
+    background-image: linear-gradient(#19376D, #19A7CE)
 }
 
 .card-2 {
-    background-image: linear-gradient(#0360f5, #b8eaf8);
+    background-image: linear-gradient(#19376D, #19A7CE);
 }
 
 .card-3 {
-    background-image: linear-gradient(#b4baf4, #6cd4f1)
+    background-image: linear-gradient(#19376D, #19A7CE);
 }
 
-.card-4 {
-    background-image: linear-gradient(#7bc6dc, #ABE9CD);
-}
 .card-back p{
     font-weight: 600;
     color: #ffffff;
