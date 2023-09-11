@@ -5,6 +5,8 @@ import { Box } from "@mui/material";
 import styled from "@emotion/styled";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { jsPDF } from 'jspdf';
+import { PDFDocument, rgb } from 'pdf-lib';
 
 const Component = styled.div`
   background: #f5f5f5;
@@ -35,6 +37,9 @@ const Document = () => {
   const [quill, setQuill] = useState(null);
   const [content, setContent] = useState(""); // Initialize the state for content
   const { title, prompt } = useParams();
+  const [fromValue, setFromValue] = useState(""); 
+  const [toValue, setToValue] = useState("");  
+  const [toDate, setDate] = useState("");
   const [initialContent, setInitialContent] = useState(`
 
   <br>Dear [Name],<br><br>
@@ -61,22 +66,23 @@ const Document = () => {
     }
   }, [quill, initialContent]);
 
-  const options = {
-    method: "POST",
-    url: "https://api.edenai.run/v2/text/generation",
-    headers: {
-      authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiN2E0ODk0MjktZGIwMS00YzMyLTgwNmYtZmI3YzgyMzkzMWYzIiwidHlwZSI6ImFwaV90b2tlbiJ9.zb2xQc9BJybAGp0EX3fDuDjtvTB-_Uqe5NZ16wDW9Hg",
-    },
-    data: {
-      providers: "openai",
-      text: prompt,
-      temperature: 0.2,
-      max_tokens: 250,
-    },
-  };
-
+  
   const handleClick = () => {
+    const prompt2 = `${prompt} From: ${fromValue}\nTo: ${toValue}\n\n${content}\n with date ${toDate}`
+    const options = {
+      method: "POST",
+      url: "https://api.edenai.run/v2/text/generation",
+      headers: {
+        authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiN2E0ODk0MjktZGIwMS00YzMyLTgwNmYtZmI3YzgyMzkzMWYzIiwidHlwZSI6ImFwaV90b2tlbiJ9.zb2xQc9BJybAGp0EX3fDuDjtvTB-_Uqe5NZ16wDW9Hg",
+      },
+      data: {
+        providers: "openai",
+        text: prompt2,
+        temperature: 0.2,
+        max_tokens: 250,
+      },
+    };
     axios
       .request(options)
       .then((response) => {
@@ -105,9 +111,50 @@ const Document = () => {
   }, [quill]);
 
   console.log(content);
+
+  const generatePDF = async () => {
+    const doc = new jsPDF();
+
+    // Add content from the Quill editor to the PDF
+    const editorContent = quill.root.innerHTML;
+    doc.html(initialContent, {
+      callback: function (pdf) {
+        pdf.save('generated.pdf');
+      }
+    });
+  };
+  ;
+
   return (
     <>
-      <button onClick={handleClick}>press to fire request</button>
+      <div>
+        <button onClick={handleClick}>Generate Text</button>
+        <label>
+          From: 
+          <input
+            type="text"
+            value={fromValue}
+            onChange={(e) => setFromValue(e.target.value)}
+          />
+        </label>
+        <label>
+          To: 
+          <input
+            type="text"
+            value={toValue}
+            onChange={(e) => setToValue(e.target.value)}
+          />
+        </label>
+        <label>
+          Date :
+          <input
+            type="date"
+            value={toDate}
+            onChange={(e) => setDate(e.target.value)}
+          />
+        </label>
+        <button onClick={generatePDF} >Download PDF</button>
+      </div>
       <Component>
         <Box className="container1" id="container"></Box>
       </Component>
