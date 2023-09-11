@@ -15,6 +15,8 @@ import Meet from "./screens/Meet";
 import Footer from "./components/Footer";
 import ChatBot from "./screens/ChatBot";
 import  Document from "./screens/Document";
+import AboutUS from "../src/screens/AboutUs";
+
 export const UserContext = createContext(null);
 
 function App() {
@@ -62,8 +64,7 @@ function App() {
           <Route path="/profile" element={<Profile />}/>
           <Route path='/schedule' element={<Meet/>}/>
           <Route path='/templates/:title/:prompt' element={<Document/>}/>
-
-
+          <Route path="/aboutus" element={<AboutUS />} />
         </Routes>
       
       </div>
