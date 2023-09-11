@@ -21,25 +21,43 @@ const Map = () => {
   const handleClick = async () => {
     setReq(!req);
     setData(data2);
-    // if (location !== "") {
-    //     const apiKey = "608796d36c114ccc8789a200c808c78b";
-    //     const encodedLocation = encodeURIComponent(location);
-    //     const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodedLocation}&key=${apiKey}`;
+    if (location !== "") {
+        const apiKey = "608796d36c114ccc8789a200c808c78b";
+        const encodedLocation = encodeURIComponent(location);
+        const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodedLocation}&key=${apiKey}`;
 
-    //     try {
-    //       const response = await axios.get(apiUrl);
-    //       const firstResult = response.data.results[0];
-    //       if (firstResult) {
-    //         const { lat, lng } = firstResult.geometry;
-    //         setCityCoordinates([lat, lng]);
-    //         setMapKey(mapKey + 1);
-    //       } else {
-    //         alert("Location not found for the given city.");
-    //       }
-    //     } catch (error) {
-    //       console.error("Error fetching data:", error);
-    //     }
-    //   }
+        try {
+          const response = await axios.get(apiUrl);
+          const firstResult = response.data.results[0];
+          if (firstResult) {
+            const { lat, lng } = firstResult.geometry;
+            setCityCoordinates([lat, lng]);
+            setMapKey(mapKey + 1);
+          } else {
+            alert("Location not found for the given city.");
+          }
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      }
+      const fetchData = async () => {
+        if (location !== "") {
+          alert("location is added", location);
+          const serpapiUrl = `http://serpapi.com/search.json?engine=google_local&q=legal+advisor+in+mumbai&location=Mumbai%2C+Maharashtra%2C+India&google_domain=google.co.in&gl=in&hl=en&api_key=5d1b79b4ee809fa8365d09f2d36a866dda3b7e1e2f93ad1c59726eff1454f4f2`;
+          try {
+            const response = await fetch(serpapiUrl,{ mode: 'no-cors' });
+            // if (!response.ok) {
+            //   throw new Error("Network response was not ok");
+            // }
+            const data = await response.json();
+            setData(data);
+            console.log(data);
+          } catch (error) {
+            console.error("Error fetching data:", error);
+          }
+        }
+      };
+      fetchData();
   };
 
   const data2 = {
@@ -647,7 +665,7 @@ const Map = () => {
   //       alert("location is added", location);
   //       const serpapiUrl = `http://serpapi.com/search.json?engine=google_local&q=legal+advisor+in+mumbai&location=Mumbai%2C+Maharashtra%2C+India&google_domain=google.co.in&gl=in&hl=en&api_key=5d1b79b4ee809fa8365d09f2d36a866dda3b7e1e2f93ad1c59726eff1454f4f2`;
   //       try {
-  //         const response = await fetch(serpapiUrl);
+  //         const response = await fetch(serpapiUrl,{ mode: 'no-cors' });
   //         if (!response.ok) {
   //           throw new Error("Network response was not ok");
   //         }
@@ -681,7 +699,6 @@ const Map = () => {
         <div className="map-box">
           <MapContainer center={cityCoordinates} zoom={11} key={mapKey}>
           <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
            {data2?.local_results.map((marker, id) => (

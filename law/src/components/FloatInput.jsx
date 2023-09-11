@@ -9,7 +9,7 @@ export const FloatInput = ({card,float}) => {
 
   return (<>
   <div id='input1'>
-        <input id='input2'  className='input'  onChange={(e)=>{setprompt(e.target.value)}}></input>  <Link to={`/templates/${card}/${prompt}`}><AiOutlineSend className='search1' style={{position:'absolute'}}/></Link>
+        <input id='input2' placeholder='Extra info (eg.Reason / Cause / Any Other Information)' className='input'  onChange={(e)=>{setprompt(e.target.value)}}></input>  <Link to={`/templates/${card}/${prompt}`}><AiOutlineSend className='search1' style={{position:'absolute'}}/></Link>
         <ImCross style={{marginLeft:"12px",color:" rgb(49, 48, 52)"}} onClick={()=>float(false)}/>
          </div>
          
