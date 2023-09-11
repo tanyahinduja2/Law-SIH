@@ -226,6 +226,7 @@ const Document = () => {
       <Component>
         <Box className="container1" id="container"></Box>
       </Component>
+      <div style={{height: "180px", width: "100%"}}></div>
     </>
   );
 };
