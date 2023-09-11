@@ -6,7 +6,12 @@ import styled from "@emotion/styled";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { jsPDF } from 'jspdf';
-import { PDFDocument, rgb } from 'pdf-lib';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+
+// Register the fonts with pdfMake
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 
 const Component = styled.div`
   background: #f5f5f5;
@@ -112,18 +117,78 @@ const Document = () => {
 
   console.log(content);
 
-  const generatePDF = async () => {
-    const doc = new jsPDF();
+  const parseHTMLToPdfMake = (htmlContent) => {
+    const div = document.createElement('div');
+    div.innerHTML = htmlContent;
 
-    // Add content from the Quill editor to the PDF
-    const editorContent = quill.root.innerHTML;
-    doc.html(initialContent, {
-      callback: function (pdf) {
-        pdf.save('generated.pdf');
+    const parsedContent = [];
+
+    // Iterate through the child nodes of the div
+    for (let i = 0; i < div.childNodes.length; i++) {
+      const node = div.childNodes[i];
+
+      if (node.nodeType === 3) {
+        // Text node (e.g., text within <p>)
+        parsedContent.push({ text: node.textContent, style: 'paragraph' });
+      } else if (node.nodeType === 1) {
+        // Element node (e.g., <p> or <br>)
+        if (node.tagName.toLowerCase() === 'p') {
+          // Paragraph tag
+          parsedContent.push({ text: node.textContent, style: 'paragraph' });
+        } else if (node.tagName.toLowerCase() === 'br') {
+          // Line break tag
+          parsedContent.push('\n');
+        }
       }
-    });
+    }
+
+    return parsedContent;
   };
-  ;
+
+
+  const generatePDF = async () => {
+  //   const doc = new jsPDF();
+    const editorContent = quill.root.innerHTML;
+    const html=`<html>
+    <head>
+      <title>Parcel Sandbox</title>
+  </head>
+  <body>${editorContent}</body>
+  </html>`;
+  //   doc.html(html, {
+  //     callback: function (pdf) {
+  //       pdf.save('generated.pdf');
+  //     }
+  //   });
+  const parsedContent = parseHTMLToPdfMake(editorContent);
+
+    const documentDefinition = {
+      content: [
+        {
+          text: 'Generated PDF',
+          style: 'header',
+        },
+        parsedContent, // Use the parsed content
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10],
+        },
+        paragraph: {
+          fontSize: 16, // Set the desired font size here (e.g., 16)
+          margin: [0, 0, 0, 10],
+        },
+      },
+    };
+
+    // Generate the PDF
+    const pdfDoc = pdfMake.createPdf(documentDefinition);
+
+    // Download the PDF
+    pdfDoc.download('generated.pdf');
+  };
 
   return (
     <>
