@@ -16,6 +16,7 @@ import Footer from "./components/Footer";
 import ChatBot from "./screens/ChatBot";
 import  Document from "./screens/Document";
 import AboutUS from "../src/screens/AboutUs";
+import ScrollToTop from "./components/Scroll";
 
 export const UserContext = createContext(null);
 
@@ -53,6 +54,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div>
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/templates" element={<Templates />} />
