@@ -221,7 +221,7 @@ const Document = () => {
             style={{border: "1px solid #042699", borderRadius: "10px", width: "150px", height: "40px", paddingLeft: "10px", color: "#042699", marginLeft: "10px"}}
           />
         </label>
-        <button onClick={generatePDF} style={{position:"absolute", top:"760px", left:"568px", backgroundColor: "#ffffff", borderRadius: "10px", border: "2px solid #042699", color: "#042699", height: "40px"}} >Download PDF</button>
+        <button onClick={generatePDF} style={{position:"absolute", top:"895px", left:"643px", backgroundColor: "#ffffff", borderRadius: "10px", border: "2px solid #042699", color: "#042699", height: "40px"}} >Download PDF</button>
       </div>
       <Component>
         <Box className="container1" id="container"></Box>
