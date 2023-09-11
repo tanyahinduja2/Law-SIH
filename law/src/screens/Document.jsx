@@ -5,6 +5,13 @@ import { Box } from "@mui/material";
 import styled from "@emotion/styled";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { jsPDF } from 'jspdf';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+
+// Register the fonts with pdfMake
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 
 const Component = styled.div`
   background: #f5f5f5;
@@ -35,6 +42,9 @@ const Document = () => {
   const [quill, setQuill] = useState(null);
   const [content, setContent] = useState(""); // Initialize the state for content
   const { title, prompt } = useParams();
+  const [fromValue, setFromValue] = useState(""); 
+  const [toValue, setToValue] = useState("");  
+  const [toDate, setDate] = useState("");
   const [initialContent, setInitialContent] = useState(`
 
   <br>Dear [Name],<br><br>
@@ -61,22 +71,23 @@ const Document = () => {
     }
   }, [quill, initialContent]);
 
-  const options = {
-    method: "POST",
-    url: "https://api.edenai.run/v2/text/generation",
-    headers: {
-      authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiN2E0ODk0MjktZGIwMS00YzMyLTgwNmYtZmI3YzgyMzkzMWYzIiwidHlwZSI6ImFwaV90b2tlbiJ9.zb2xQc9BJybAGp0EX3fDuDjtvTB-_Uqe5NZ16wDW9Hg",
-    },
-    data: {
-      providers: "openai",
-      text: prompt,
-      temperature: 0.2,
-      max_tokens: 250,
-    },
-  };
-
+  
   const handleClick = () => {
+    const prompt2 = `${prompt} From: ${fromValue}\nTo: ${toValue}\n\n${content}\n with date ${toDate}`
+    const options = {
+      method: "POST",
+      url: "https://api.edenai.run/v2/text/generation",
+      headers: {
+        authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiN2E0ODk0MjktZGIwMS00YzMyLTgwNmYtZmI3YzgyMzkzMWYzIiwidHlwZSI6ImFwaV90b2tlbiJ9.zb2xQc9BJybAGp0EX3fDuDjtvTB-_Uqe5NZ16wDW9Hg",
+      },
+      data: {
+        providers: "openai",
+        text: prompt2,
+        temperature: 0.2,
+        max_tokens: 250,
+      },
+    };
     axios
       .request(options)
       .then((response) => {
@@ -105,9 +116,110 @@ const Document = () => {
   }, [quill]);
 
   console.log(content);
+
+  const parseHTMLToPdfMake = (htmlContent) => {
+    const div = document.createElement('div');
+    div.innerHTML = htmlContent;
+
+    const parsedContent = [];
+
+    // Iterate through the child nodes of the div
+    for (let i = 0; i < div.childNodes.length; i++) {
+      const node = div.childNodes[i];
+
+      if (node.nodeType === 3) {
+        // Text node (e.g., text within <p>)
+        parsedContent.push({ text: node.textContent, style: 'paragraph' });
+      } else if (node.nodeType === 1) {
+        // Element node (e.g., <p> or <br>)
+        if (node.tagName.toLowerCase() === 'p') {
+          // Paragraph tag
+          parsedContent.push({ text: node.textContent, style: 'paragraph' });
+        } else if (node.tagName.toLowerCase() === 'br') {
+          // Line break tag
+          parsedContent.push('\n');
+        }
+      }
+    }
+
+    return parsedContent;
+  };
+
+
+  const generatePDF = async () => {
+  //   const doc = new jsPDF();
+    const editorContent = quill.root.innerHTML;
+    const html=`<html>
+    <head>
+      <title>Parcel Sandbox</title>
+  </head>
+  <body>${editorContent}</body>
+  </html>`;
+  //   doc.html(html, {
+  //     callback: function (pdf) {
+  //       pdf.save('generated.pdf');
+  //     }
+  //   });
+  const parsedContent = parseHTMLToPdfMake(editorContent);
+
+    const documentDefinition = {
+      content: [
+        {
+          text: 'Generated PDF',
+          style: 'header',
+        },
+        parsedContent, // Use the parsed content
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10],
+        },
+        paragraph: {
+          fontSize: 16, // Set the desired font size here (e.g., 16)
+          margin: [0, 0, 0, 10],
+        },
+      },
+    };
+
+    // Generate the PDF
+    const pdfDoc = pdfMake.createPdf(documentDefinition);
+
+    // Download the PDF
+    pdfDoc.download('generated.pdf');
+  };
+
   return (
     <>
-      <button onClick={handleClick}>press to fire request</button>
+      <div>
+        <button onClick={handleClick}>Generate Text</button>
+        <label>
+          From: 
+          <input
+            type="text"
+            value={fromValue}
+            onChange={(e) => setFromValue(e.target.value)}
+          />
+        </label>
+        <label>
+          To: 
+          <input
+            type="text"
+            value={toValue}
+            onChange={(e) => setToValue(e.target.value)}
+          />
+        </label>
+        <label>
+          Date :
+          <input
+            type="date"
+            value={toDate}
+            onChange={(e) => setDate(e.target.value)}
+          />
+        </label>
+        <button onClick={generatePDF} >Download PDF</button>
+      </div>
       <Component>
         <Box className="container1" id="container"></Box>
       </Component>
