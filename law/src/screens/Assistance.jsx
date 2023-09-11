@@ -46,7 +46,7 @@ export default function Assistance(props) {
               <div className="expert-bottom">
                 <h3 className="expert-expertise" style={{color: `${colours[i]}`}}>{expert.expertise}</h3>
                 <p className="expert-mail" style={{color: `${colours[i]}`}}>{expert.email}</p>
-                <button onClick={()=>{handleCHAT()}} type="submit" className="expert-btn" style={{backgroundColor: `${colours[i]}`}}>
+                <button onClick={()=>{handleCHAT(expert.email)}} type="submit" className="expert-btn" style={{backgroundColor: `${colours[i]}`}}>
                   <span>Chat</span>
                 </button>
               </div>

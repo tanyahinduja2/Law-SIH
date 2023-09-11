@@ -44,11 +44,12 @@ function ChatBot() {
       </>
     );
   }
-  const handleCHAT=() => {
+  const handleCHAT=(email) => {
     window.scrollTo({
       top: 0,
       behavior: "smooth", 
     });
+    setRoom(email)
     setIsInChat(true);
     setChattingWith("OtherUser"); 
   }
