@@ -19,6 +19,7 @@ export default function Hero() {
           className="btn getstarted1"
           type="submit"
           style={{ padding: "16px 30px 10px 30px" }}
+          onClick={() => navigate('/joinus')}
         >
           <h5>Get Started <AiOutlineArrowRight style={{}} /></h5>
         </button>

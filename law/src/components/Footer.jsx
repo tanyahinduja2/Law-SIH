@@ -7,7 +7,7 @@ const Footer = () => {
     const navigate = useNavigate()
     return (
         <div className="footer">
-            <h2 className="footer-logo">Law</h2>
+            <h2 className="footer-logo">InteLegal</h2>
             <div className="footer-ele">
                 <h4>Templates</h4>
                 <a href="#" onClick={() => navigate('/templates')}>Generate Documents</a>
