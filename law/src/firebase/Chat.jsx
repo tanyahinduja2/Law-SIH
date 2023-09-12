@@ -153,7 +153,7 @@ export default function Chat(props) {
           </div>
         </div>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form style={{display:"flex",justifyContent:"center",alignItems:"center"}} onSubmit={handleSubmit}>
         <input
           className="inputchat"
           placeholder="Type your message here"

@@ -72,8 +72,8 @@
 }
 
 .inputchat {
-  position: relative;
-  bottom: 30px;
+  /* position: relative;
+  bottom: 30px; */
   padding: 20px;
   margin-left: 2px;
   left: 0;
@@ -86,8 +86,8 @@
 }
 
 .send {
-  position: absolute;
-  padding: 10px 15px;
+  /* position: absolute;
+  padding: 10px 15px; */
   left: 1100px;
   bottom: 29px;
   background-color: #042699;
@@ -192,7 +192,7 @@
 }
 .halfchat{
   width: 30%;
-  height: 410px;
+  height: 440px;
   background-color: rgb(176, 183, 255);
   border-radius: 0 10px 10px 0px;
 }
