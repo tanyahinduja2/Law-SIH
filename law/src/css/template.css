@@ -45,12 +45,12 @@ h1{
     height: 340px;
 }
 .card:hover{
-    border-color: #1d39c4;
+    border-color: #d0b077;
 }
 .card-btn{
     border: none;
     outline: none;
-    background: #1d39c4;
+    background: #d0b077;
     color: #fff;
     border-radius: 10px;
     max-width: 120px;
@@ -62,14 +62,14 @@ h1{
     margin: top 20px;
     cursor: pointer;
     transition: .3s;
-    border: 1px solid #1d39c4;
+    border: 1px solid #d0b077;
     position: absolute;
     bottom: 24px;
 }
 .card-btn:hover{
     background: transparent;
-    color: #1d39c4;
-    border: 1px solid #1d39c4;
+    color: #d0b077;
+    border: 1px solid #d0b077;
 }
 @media(max-width: 600px){
     .card{

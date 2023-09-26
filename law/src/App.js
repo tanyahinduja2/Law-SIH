@@ -3,7 +3,7 @@ import { onAuthStateChanged,getAuth } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { Routes, Route, } from "react-router-dom";
+import { Routes, Route, useLocation, } from "react-router-dom";
 import Templates from "./screens/Templates";
 import Home from "./screens/Home";
 import Map from "./screens/Map";
@@ -22,6 +22,7 @@ export const UserContext = createContext(null);
 
 function App() {
   const auth = getAuth();
+ const location  = useLocation()
   const [user, setUser] = useState(null);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (authUser) => {
@@ -48,11 +49,17 @@ function App() {
       unsubscribe();
     };
   }, []);
+  let navbarColorClass = "";
 
+  if (location.pathname === "/" || location.pathname==="/assist") {
+    navbarColorClass = "white";
+  } else {
+    navbarColorClass = "black"; 
+  }
   return (
     <UserContext.Provider value={user}>
     <div className="App">
-      <Navbar />
+      <Navbar color={navbarColorClass}/>
       <div>
         <ScrollToTop/>
         <Routes>

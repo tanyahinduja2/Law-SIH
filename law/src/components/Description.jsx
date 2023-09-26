@@ -1,14 +1,35 @@
-import React,{ useEffect } from "react";
+import React,{ useState,useEffect } from "react";
 import "../css/description.css";
-import hassle1 from "../illustrations/hassle1.svg";
-import hassle2 from "../illustrations/hassle2.svg";
-import hassle3 from "../illustrations/hassle3.svg";
+import "../css/template.css";
+import nda from "../icons/nda.png";
+import cad from "../icons/cad.png";
+import copyright1 from "../icons/copyright-1.png";
+import copyright2 from "../icons/copyright-2.png";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { FloatInput } from "./FloatInput";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 
-export const Description = () => {
+export const Description = () => { 
+  const [selectedCardIndex, setSelectedCardIndex] = useState("");
+const [floatinput,setFloatInput]=useState(false)
+const [cards] = useState([
+  {
+    icon: nda,
+    title: "Non-Disclosure Agreement",
+    text: `A non-disclosure agreement is a legally binding contract that establishes a confidential relationship.`,
+  },
+  {
+    icon: cad,
+    title: "Cease and Desist Letter",
+    text: `The Cease and Desist acts as a formal request that the recipient stop and not continue this behaviour.`,
+  },
+  {
+    icon: copyright1,
+    title: "Copyright License Agreement",
+    text: `A copyright license agreement is a legally enforceable contract that gives a licensee, authorization to use your work for designated purposes, typically in exchange for payment.`,
+  },])
   const navigate = useNavigate()
   useEffect(()=>{
     Aos.init({duration: 2000});
@@ -16,7 +37,7 @@ export const Description = () => {
   return (
     <div>
       <div>
-        <div data-aos="fade-down"  className="title">Hassle-free Legal Documents</div>
+        <div data-aos="fade-down"  className="title"><span style={{color:"#d0b077"}}>Hassle-free </span>Legal Documents</div>
         <div className="title-content">
           Looking to register a company or set up a trust fund? InteLegal makes
           tracking your paper trail both simple and seamless. And that’s just
@@ -24,7 +45,7 @@ export const Description = () => {
           here to guide you through a variety of legal structures.
         </div>
       </div>
-      <div className="features">
+      {/* <div className="features">
         <img data-aos="fade-right" className="features-img" src={hassle1} alt="img"></img>
         <div className="features-content">
           <div data-aos="fade-left"
@@ -77,8 +98,8 @@ export const Description = () => {
           </button>
         </div>
         <img data-aos="fade-left" className="features-img" src={hassle2} alt="img"></img>
-      </div>
-      <div className="features">
+      </div> */}
+      {/* <div className="features">
         <img data-aos="fade-right" className="features-img" src={hassle3} alt="img"></img>
         <div className="features-content">
           <div data-aos="fade-left"
@@ -104,11 +125,33 @@ export const Description = () => {
             <AiOutlineArrowRight style={{}} />
           </button>
         </div>
-      </div>
-      <div data-aos="fade-down" className="constitute">Why Choose InteLegal</div>
+      </div> */}
+       <div className="containe">
+          <div className="cards">
+            {cards.map((card, id) => (
+              <div key={id} className="card">
+                <img src={card.icon} alt="icon" className="icons"></img>
+                <h4>{card.title}</h4>
+                <p>{card.text}</p>
+                {/* <Link to={`/templates/${encodeURIComponent(card.title)}`}> */}
+                <button className="btn card-btn" onClick={()=>{
+                  setFloatInput(true)
+                  setSelectedCardIndex(encodeURIComponent(card.title))
+                }}>Generate</button>
+              
+                {/* </Link> */}
+              </div>
+            ))}
+
+          </div>
+          {
+                !floatinput?<></>:<FloatInput card={selectedCardIndex} float={setFloatInput} />
+               }
+        </div>
+      <div data-aos="fade-right" className="constitute">Why Choose InteLegal</div>
       <br />
       <br />
-      <div data-aos="fade-up" className="constitutebox">
+      <div data-aos="fade-left" className="constitutebox">
         <div className="box">
           <figure className="figure-img">
             <img

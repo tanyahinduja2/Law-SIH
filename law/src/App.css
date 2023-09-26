@@ -1,5 +1,6 @@
 body{
     cursor: url();
+    overflow-x: hidden;
 }
 body::-webkit-scrollbar {
     width: 12px; 

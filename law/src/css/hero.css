@@ -35,14 +35,17 @@ p {
     width: 100%;
     background-color: #1f2324;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 0 0 100px;
+   border-bottom-left-radius: 25px;
+   border-bottom-right-radius: 25px;
+
     color: white;
     margin-bottom: 15vh;
-    border-bottom:3px solid rgb(168, 167, 160);
-    border-top:5px solid rgb(149, 145, 145);
+    border-bottom:1px solid rgb(168, 167, 160);
+    border-top:3px solid rgb(168, 167, 160);
     z-index: 1;
+    overflow: hidden;
 }
 .explore{
     margin-right: 100px;
@@ -51,6 +54,16 @@ p {
     background-color: #fff;
     border: 2px solid white ;
 
+}
+.appointment{
+    border: 2px solid rgb(168, 167, 160);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: 33.333%;
+    
+    
 }
 .explore:hover{
     background-color: #d0b077;
@@ -75,4 +88,8 @@ p {
    height: 60px;
    width: 200px;
    border-radius: 5px;
+}
+.features1{
+  
+
 }
