@@ -1,21 +1,21 @@
+
 .getstarted{
-    background-color: #042699;
-    color: white;
+    background-color: #d0b077;
+    color: #0e1619;
     margin: auto;
+    padding: auto;
    border: none;
    height: 40px;
-   width: 70px;
-   border-radius: 5px;
+   border-radius: 25px;
 }
 /* .getstarted:hover{
     color: #042699;
 } */
 .navbar-nav{
-   margin-left: 25vw;
+   margin-left: auto;
+   color: white;
 }
-.nav-item{
-    margin-right: 10vh;
-}
+
 .navbar-brand{
     margin: 0 0 0 5vw;
     font-size: 32px;
@@ -25,4 +25,26 @@
     height: 100px;
     font-family:'poppins', sans-serif;
     line-height: 24px;
+}
+.container-fluid{
+    border-bottom:2px solid rgb(168, 167, 160);
+    border-top:2px solid rgb(149, 145, 145);
+    z-index: 99;
+    
+}
+.nav-link{
+    color:"d0b077"
+}
+.ontainur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 700px;
+    background-image: url("https://theleaflet.in/wp-content/uploads/2022/03/Law-909x605.png");
+    background-position:center top ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width: 1000px; */
 }

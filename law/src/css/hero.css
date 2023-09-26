@@ -6,12 +6,12 @@
 }
 
 .text {
-    margin-left: -60px; /* Approximately -10vw in pixels */
-    margin-top: 80px; /* Approximately 10vh in pixels */
+    margin-left: 50px;
+    margin-top: 160px; /* Approximately 10vh in pixels */
     font-size: 70px;
     font-family: 'poppins';
     line-height: 1.2;
-    color: black;
+    color: white;
     text-shadow: 0px 1px, 1px 0px, 1px 1px 0 black;
     letter-spacing: 1px;
     font-weight: bold;
@@ -33,33 +33,42 @@ p {
 .gmaps{
     height: 200px;
     width: 100%;
-    background-color: #042699;
+    background-color: #1f2324;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     padding: 0 0 0 100px;
     color: white;
     margin-bottom: 15vh;
+    border-bottom:3px solid rgb(168, 167, 160);
+    border-top:5px solid rgb(149, 145, 145);
+    z-index: 1;
 }
 .explore{
     margin-right: 100px;
     padding-top: 10px;
-    color:#042699 ;
+    color:#d0b077;
     background-color: #fff;
     border: 2px solid white ;
 
 }
 .explore:hover{
-    background-color: #042699;
-    color: white;
+    background-color: #d0b077;
+    color: #1f2324;
 }
-
+.wohoo{
+    color: transparent;
+    text-shadow: none;
+    -webkit-text-stroke: #d0b077;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0.7px;
+}
 .getstarted1:hover{
-    color: #042699;
+    color: #d0b077;
 }
 
 .getstarted1{
-    background-color: #042699;
+    background-color: #d0b077;
     color: white;
     margin: auto;
    border: none;
