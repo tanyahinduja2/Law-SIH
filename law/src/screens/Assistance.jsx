@@ -39,14 +39,14 @@ export default function Assistance(props) {
         {expertsData.map((expert, i) => (
           <>
             <div className="assistance__card">
-              <div className="expert-top" style={{backgroundColor: `${colours[i]}`}}>
-                <h2 className="expert-name">{expert.name}</h2>
+              <div className="expert-top" style={{backgroundColor: "#d0b077"}}>
+                <h2 className="expert-name" style={{color: "black"}}>{expert.name}</h2>
                 <img src={expert.photoURL} className="expert-img"></img>
               </div>
               <div className="expert-bottom">
-                <h3 className="expert-expertise" style={{color: `${colours[i]}`}}>{expert.expertise}</h3>
-                <p className="expert-mail" style={{color: `${colours[i]}`}}>{expert.email}</p>
-                <button onClick={()=>{handleCHAT(expert.email)}} type="submit" className="expert-btn" style={{backgroundColor: `${colours[i]}`}}>
+                <h3 className="expert-expertise" style={{color: "black"}}>{expert.expertise}</h3>
+                <p className="expert-mail" style={{color: "black"}}>{expert.email}</p>
+                <button onClick={()=>{handleCHAT(expert.email)}} type="submit" className="expert-btn" style={{backgroundColor: "#d0b077"}}>
                   <span>Chat</span>
                 </button>
               </div>
