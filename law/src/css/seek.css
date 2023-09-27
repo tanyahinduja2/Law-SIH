@@ -22,7 +22,7 @@
   color: #0808cde6;
   font-size: 20px;
 } */
-.seekgod{
+.seekgod {
   position: absolute;
   top: 0;
   left: 0;
@@ -30,10 +30,11 @@
   right: 0;
   height: 600px;
   background-image: url("https://img.freepik.com/free-photo/gavel-with-books-old-wooden-desk_93675-129543.jpg?w=900&t=st=1695768109~exp=1695768709~hmac=1e015c9f942d0307b66025382a73f3c058acea3aae94a96067be4936d90af4ed");
-  background-position:center bottom 10% ;
+  background-position: center bottom 10%;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .seek-main-title {
   display: flex;
   justify-content: center;
@@ -41,7 +42,7 @@
   text-align: center;
 }
 
-.seek-text{
+.seek-text {
 
   margin-top: 500px;
 }
@@ -129,12 +130,74 @@
   display: flex;
   justify-content: center;
 }
-.containseek{
-  
+
+.containseek {
+
   text-align: center;
   margin-top: 50px;
 }
-.blackbg{
+
+.blackbg {
   padding: 50px 0 50px 0;
   background-color: rgb(19, 18, 18);
+}
+
+.video-call-card {
+  margin-top: 25px;
+  margin-left: 30%;
+  /* background-color: #d0b077; */
+  background-color: #efe2cc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  height: 200px;
+  padding: 20px;
+  border-radius: 16px;
+  align-items: center;
+  border: 6px solid #d0b077;
+  /* box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24); */
+}
+
+.seek-cross-btn {
+  background-color: white;
+  border: none;
+}
+
+.seek-cross-btn:hover {
+  border: 3px solid #d0b077;
+  border-radius: 8px;
+}
+
+.seek-join-us:hover {
+  transform: scale(1.1);
+  background-color: #d0b077;
+}
+
+.seek-premium {
+  display: flex;
+  background-color: #d0b077;
+  font-size: 14px;
+  padding: 0px 10px;
+  border-radius: 16px;
+  width: auto;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.seek-feature-card {
+  /* margin-top: 30px; */
+  width: 60%;
+  height: 374px;
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #f1e3c0,
+    -20px -20px 60px #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 40px;
 }
