@@ -1,32 +1,34 @@
 import React,{ useState,useEffect } from "react";
 import "../css/description.css";
 import "../css/template.css";
-import nda from "../icons/nda.png";
-import cad from "../icons/cad.png";
-import copyright1 from "../icons/copyright-1.png";
-import copyright2 from "../icons/copyright-2.png";
+import nda1 from "../icons/nda1.png";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FloatInput } from "./FloatInput";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
+import copyright4 from "../icons/copyright1.png";
+import cad1 from "../icons/cad1.png";
+import peace from "../icons/peace.png";
+import book from "../icons/book.png";
+import personal from "../icons/personal.png";
 
 export const Description = () => { 
   const [selectedCardIndex, setSelectedCardIndex] = useState("");
 const [floatinput,setFloatInput]=useState(false)
 const [cards] = useState([
   {
-    icon: nda,
+    icon: nda1,
     title: "Non-Disclosure Agreement",
     text: `A non-disclosure agreement is a legally binding contract that establishes a confidential relationship.`,
   },
   {
-    icon: cad,
+    icon: cad1,
     title: "Cease and Desist Letter",
     text: `The Cease and Desist acts as a formal request that the recipient stop and not continue this behaviour.`,
   },
   {
-    icon: copyright1,
+    icon: copyright4,
     title: "Copyright License Agreement",
     text: `A copyright license agreement is a legally enforceable contract that gives a licensee, authorization to use your work for designated purposes, typically in exchange for payment.`,
   },])
@@ -148,6 +150,11 @@ const [cards] = useState([
                 !floatinput?<></>:<FloatInput card={selectedCardIndex} float={setFloatInput} />
                }
         </div>
+        <br />
+        <br />
+        <br />
+        <div style={{backgroundColor:"black"}}>
+          <br />
       <div data-aos="fade-right" className="constitute">Why Choose InteLegal</div>
       <br />
       <br />
@@ -155,8 +162,9 @@ const [cards] = useState([
         <div className="box">
           <figure className="figure-img">
             <img
-              src="https://constitute.com.au/wp-content/uploads/2021/10/customer-service-svgrepo-com.svg"
+              src={personal}
               alt=""
+              height={25}
             />
           </figure>
           <br />
@@ -170,8 +178,9 @@ const [cards] = useState([
         <div className="box">
           <figure className="figure-img">
             <img
-              src="https://constitute.com.au/wp-content/uploads/2021/10/documents-svgrepo-com.svg"
+              src={book}
               alt=""
+              height={25}
             />
           </figure>
           <br />
@@ -186,8 +195,9 @@ const [cards] = useState([
         <div className="box">
           <figure className="figure-img">
             <img
-              src="https://constitute.com.au/wp-content/uploads/2021/10/hand-peace-svgrepo-com.svg"
+              src={peace}
               alt=""
+              height={25}
             />
           </figure>
           <br />
@@ -199,6 +209,7 @@ const [cards] = useState([
             order forms guide the user through the process as a lawyer might,
             asking questions and providing options.
           </p>
+        </div>
         </div>
       </div>
     </div>
