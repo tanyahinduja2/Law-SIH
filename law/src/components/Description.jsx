@@ -9,6 +9,9 @@ import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 import copyright4 from "../icons/copyright1.png";
 import cad1 from "../icons/cad1.png";
+import peace from "../icons/peace.png";
+import book from "../icons/book.png";
+import personal from "../icons/personal.png";
 
 export const Description = () => { 
   const [selectedCardIndex, setSelectedCardIndex] = useState("");
@@ -147,6 +150,11 @@ const [cards] = useState([
                 !floatinput?<></>:<FloatInput card={selectedCardIndex} float={setFloatInput} />
                }
         </div>
+        <br />
+        <br />
+        <br />
+        <div style={{backgroundColor:"black"}}>
+          <br />
       <div data-aos="fade-right" className="constitute">Why Choose InteLegal</div>
       <br />
       <br />
@@ -154,8 +162,9 @@ const [cards] = useState([
         <div className="box">
           <figure className="figure-img">
             <img
-              src="https://constitute.com.au/wp-content/uploads/2021/10/customer-service-svgrepo-com.svg"
+              src={personal}
               alt=""
+              height={25}
             />
           </figure>
           <br />
@@ -169,8 +178,9 @@ const [cards] = useState([
         <div className="box">
           <figure className="figure-img">
             <img
-              src="https://constitute.com.au/wp-content/uploads/2021/10/documents-svgrepo-com.svg"
+              src={book}
               alt=""
+              height={25}
             />
           </figure>
           <br />
@@ -185,8 +195,9 @@ const [cards] = useState([
         <div className="box">
           <figure className="figure-img">
             <img
-              src="https://constitute.com.au/wp-content/uploads/2021/10/hand-peace-svgrepo-com.svg"
+              src={peace}
               alt=""
+              height={25}
             />
           </figure>
           <br />
@@ -198,6 +209,7 @@ const [cards] = useState([
             order forms guide the user through the process as a lawyer might,
             asking questions and providing options.
           </p>
+        </div>
         </div>
       </div>
     </div>
