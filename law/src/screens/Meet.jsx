@@ -54,12 +54,12 @@ const Meet = (props) => {
       <div className="meet-container">
         {expertsData.map((expert, i) => (
           <>
-            <div className="meet-card" style={{ backgroundColor: `${colours[i]}`, borderColor: `${colours[i]}`}}>
-              <h2 className="meet-name">{expert.name}</h2>
-              <img src={expert.photoURL} className="meet-img" style={{ borderColor: `${colours[i]}`}}></img>
-              <h4 className="meet-expertise">{expert.expertise}</h4>
-              <p className="meet-mail">{expert.email}</p>
-              <button type="submit" className="meet-btn" style={{ backgroundColor: `${colours[i]}` }}>
+            <div className="meet-card" style={{ backgroundColor: "#d0b077", borderColor: "#d0b077"}}>
+              <h2 className="meet-name" style={{color:"black"}}>{expert.name}</h2>
+              <img src={expert.photoURL} className="meet-img" style={{ borderColor: "#d0b077"}}></img>
+              <h4 className="meet-expertise" style={{color:"black"}}>{expert.expertise}</h4>
+              <p className="meet-mail" style={{color:"black"}}>{expert.email}</p>
+              <button type="submit" className="meet-btn" style={{ backgroundColor: "#d0b077" ,color:"black"}}>
                 <span onClick={()=>setIsOpen(true)}>Schedule</span>
                  {/* <button
           style={{ display: 'block', margin: '0 auto' }}
