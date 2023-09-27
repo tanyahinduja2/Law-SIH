@@ -167,7 +167,7 @@
 
 .expert-btn {
   justify-content: center;
-  color: black;
+  color: white;
   margin: auto;
   border: none;
   height: 50px;
@@ -181,6 +181,7 @@
 
 .expert-btn span {
   font-size: 20px;
+
 }
  
 .screens{
