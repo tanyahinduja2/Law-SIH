@@ -1,0 +1,46 @@
+.container-map{
+    display: flex;
+    margin: auto;
+    width: 800px;
+    box-shadow: 5px 5px 17px #c8c8c8,
+               -5px -5px 17px #ffffff;
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.input {
+    width: 800px;
+    height: 50px;
+    padding: 10px;
+    outline: none;
+    background: #e8e8e8;
+    border: none;
+    border-radius: 10px;
+}
+
+.input-btn {
+    color: gray;
+    border: none;
+    background-color: #e8e8e8;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.map-box{
+    margin: 60px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leaflet-container {
+    height: 700px;
+    width: 90%;
+    border-radius: 20px;
+  }
+
+  .leaflet .leaflet-tile-pane {
+    border-radius: 0 !important;
+}

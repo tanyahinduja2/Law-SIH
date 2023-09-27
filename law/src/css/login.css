@@ -1,0 +1,40 @@
+.svg {
+    margin-left: 50px;
+    height: 500px;
+    width: 500px;
+
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .formWrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 180px;
+    margin-top: 150px;
+    width: 300px;
+}
+
+.formWrapper h5 {
+    color: #042699;
+    font-weight: 600
+}
+
+.loginInput {
+    border: solid 1px #042699;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.submitButton {
+    color: #042699;
+    border: solid 1px #042699;
+    padding: 10px;
+    border-radius: 8px;
+} */

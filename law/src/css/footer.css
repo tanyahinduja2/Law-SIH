@@ -1,0 +1,34 @@
+.footer {
+    margin-top: 20px;
+    display: flex;
+}
+
+.footer-logo {
+    margin: 22px 110px 0 80px;
+}
+
+.footer-ele {
+    margin: 25px 8px 25px 8px;
+    justify-content: center;
+    padding-right: 10px;
+    width: 100%
+}
+
+.footer-ele a {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+}
+
+.footer-ele a:hover {
+    color: #042699
+}
+
+.footer-ele div {
+    display: flex;
+    padding: 8px;
+}
+.footer-ele h4 {
+    font-weight: 600;
+}
