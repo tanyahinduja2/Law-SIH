@@ -89,12 +89,12 @@ export default function SeekAssistance() {
       <br /> We’re Here for You with <span style={{color:"#d0b077"}}>24/7</span> Support, <span style={{color:"#d0b077"}}>Real-Time</span>  Chat, and <span style={{color:"#d0b077"}}>Expert</span> Lawyers. <br /> <span style={{color:"#d0b077"}}>Tap in Below</span>, and Let’s Drive those Legal Woes Away.
       </div>
       <div className="displaycontainer" style={{justifyContent:"space-around",display:"flex",marginBottom:"50px"}}>
-      <button className="btn getstarted" style={{width:"200px" }}>
+      <button className="btn getstarted" style={{width:"200px" }} onClick={() => navigate("/chatbot")}>
          <span >Chat Support</span> <MdKeyboardArrowRight style={{fontSize:"30"}}/>
 
       </button>
       
-      <button className="btn getstarted" style={{width:"200px" }}>
+      <button className="btn getstarted" style={{width:"200px" }} onClick={() => navigate("/maps")}>
          <span >Lawyers on Map</span> <MdKeyboardArrowRight style={{fontSize:"30"}}/>
 
       </button>
@@ -105,7 +105,7 @@ export default function SeekAssistance() {
         Join Us and Unlock Unlimited Hours of Personal Video Chat with the Best Lawyers!
 
       </div>
-      <button className="btn getstarted" style={{width:"400px" }}>
+      <button className="btn getstarted" style={{width:"400px" }} onClick={() => navigate("/schedule")}>
          <span >Connect to the Best from Video Call</span> <MdKeyboardArrowRight style={{fontSize:"30"}}/>
 
       </button>
