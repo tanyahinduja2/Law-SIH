@@ -35,7 +35,7 @@ const [cards] = useState([
     Aos.init({duration: 2000});
   },[]);
   return (
-    <div>
+    <div >
       <div>
         <div data-aos="fade-down"  className="title"><span style={{color:"#d0b077"}}>Hassle-free </span>Legal Documents</div>
         <div className="title-content">
@@ -126,7 +126,7 @@ const [cards] = useState([
           </button>
         </div>
       </div> */}
-       <div className="containe">
+       <div className="containe1"  id="temp">
           <div className="cards">
             {cards.map((card, id) => (
               <div key={id} className="card">

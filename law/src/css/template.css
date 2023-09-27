@@ -6,12 +6,15 @@ body{
 .containe{
     max-width: 1200px;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
     margin: auto 50px;
     padding: 0px 20px;
     
+}
+#temp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 section{
     min-height: 100vh;
