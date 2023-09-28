@@ -37,13 +37,10 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-   border-bottom-left-radius: 25px;
-   border-bottom-right-radius: 25px;
-
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     color: white;
     margin-bottom: 15vh;
-    border-bottom:1px solid rgb(168, 167, 160);
-    border-top:3px solid rgb(168, 167, 160);
+    
     z-index: 1;
     overflow: hidden;
 }
@@ -56,7 +53,6 @@ p {
 
 }
 .appointment{
-    border: 2px solid rgb(168, 167, 160);
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
