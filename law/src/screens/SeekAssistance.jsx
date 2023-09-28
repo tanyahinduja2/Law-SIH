@@ -26,12 +26,9 @@ export default function SeekAssistance() {
     <>
       <div className="seekgod">
         <div data-aos="fade-left" className="text">
-          Making <br />
-          <span className="wohoo">Legal Structures</span> , <br /> Easy
-          <p style={{ fontWeight: "0" }}>
-            India's trusted supplier for legal structures <br /> to the advice
-            industry
-          </p>
+         Find <br />
+          <span className="wohoo">Legal Help</span> , <br /> Instantly
+         <br />
           <button
             className="btn getstarted"
             type="submit"

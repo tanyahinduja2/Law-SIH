@@ -76,3 +76,11 @@
     border-radius: 20px;
 }
 
+.trash{
+    background-color:#d0b077 ;
+    color: white;
+}
+.trash:hover{
+    color: #d0b077;
+    background-color: black;
+}

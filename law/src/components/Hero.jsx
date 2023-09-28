@@ -37,7 +37,7 @@ export default function Hero() {
         {/* <div ><GoLaw  style={{color:"#d0b077",fontSize:"80px",marginRight:"50px"}}/></div>
       <h4> Embark on a quest to connect with nearby advocates who can provide essential legal assistance.</h4>
       <button className="btn explore"><h4 onClick={()=>{navigate("/maps")}}> Explore</h4></button> */}
-        <div className="appointment" style={{ display: "flex"   ,borderBottomLeftRadius:"25px"}}>
+        <div className="appointment" id="ap1" style={{ display: "flex",borderBottomLeftRadius:"25px"}} onClick={()=>{navigate("/assist")}}>
         <svg
       fill="rgb(168, 167, 160)"
       height="70px"
@@ -97,7 +97,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="appointment" style={{ display: "flex"}}>
+        <div className="appointment" id="ap1" style={{ display: "flex"}}  onClick={()=>{navigate("/schedule")}} >
         <svg
         fill="rgb(168, 167, 160)"
         height="70px"
@@ -141,7 +141,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="appointment" style={{ display: "flex"  ,borderBottomRightRadius:"25px"}}>
+        <div className="appointment" id="ap3" style={{ display: "flex"  ,borderBottomRightRadius:"25px"}} onClick={()=>{navigate("/joinus")}}>
         <img src={Lawbg} alt=""  style={{height:"70px" ,width:"70"}}/>
           <div
             className="features1"

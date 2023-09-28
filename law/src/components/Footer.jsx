@@ -6,18 +6,18 @@ import { useNavigate } from "react-router-dom";
 const Footer = () => {
     const navigate = useNavigate()
     return (
-        <div className="footer">
+        <div className="footer" style={{backgroundColor:"#1b1b1b" ,color:"white"}}>
             <h2 className="footer-logo">Legalसाथी</h2>
             <div className="footer-ele">
                 <h4>Templates</h4>
-                <a href="#" onClick={() => navigate('/templates')}>Generate Documents</a>
+                <a href="#"style={{color:"white"}} onClick={() => navigate('/templates')}>Generate Documents</a>
                 {/* <a href="#">News</a> */}
             </div>
             <div className="footer-ele">
                 <h4>Seek Assistance</h4>
-                <a href="#" onClick={() => navigate('/chatbot')}>Chat Now</a>
-                <a href="#"onClick={() => navigate('/maps')}>Explore</a>
-                <a href="#" onClick={() => navigate('/schedule')}>Schedule</a>
+                <a href="#" style={{color:"white"}} onClick={() => navigate('/chatbot')}>Chat Now</a>
+                <a href="#" style={{color:"white"}}onClick={() => navigate('/maps')}>Explore</a>
+                <a href="#" style={{color:"white"}}onClick={() => navigate('/schedule')}>Schedule</a>
             </div>
             <div className="footer-ele">
                 <h4>Contact</h4>

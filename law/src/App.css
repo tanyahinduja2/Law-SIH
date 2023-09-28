@@ -33,3 +33,10 @@ body::-webkit-scrollbar {
   border: none !important;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
 }
+#ap1:hover,#ap2:hover,#ap3:hover{
+ transform: scale(1.15);
+ border: none;
+}
+#shadow-host-companion{
+  min-height: none;
+}

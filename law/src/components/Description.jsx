@@ -149,13 +149,17 @@ const [cards] = useState([
           {
                 !floatinput?<></>:<FloatInput card={selectedCardIndex} float={setFloatInput} />
                }
+               
         </div>
+        <div className="nexttemp" style={{display:"flex",justifyContent:"center"}}>
+                <button id="" className="btn trash " style={{margin:"auto",borderRadius:"10px"}} onClick={()=>{navigate('/templates')}}>View All Templates <AiOutlineArrowRight/> </button>
+               </div>
         <br />
         <br />
         <br />
         <div style={{backgroundColor:"black"}}>
           <br />
-      <div data-aos="fade-right" className="constitute">Why Choose InteLegal</div>
+      <div data-aos="fade-right" className="constitute">Why Choose Us?</div>
       <br />
       <br />
       <div data-aos="fade-left" className="constitutebox">
@@ -171,7 +175,7 @@ const [cards] = useState([
           <br />
           <h2>PERSONALISED SERVICE</h2>
           <p>
-            InteLegal advisers take time to get to know your project.They're
+            <span style={{fontWeight:"bold",color:"black"}}>Legal </span><span style={{fontWeight:"bold",color:"black"}}>साथी</span> advisers take time to get to know your project.They're
             fully decdicated to offering the highest level of customer service.
           </p>
         </div>
@@ -211,6 +215,10 @@ const [cards] = useState([
           </p>
         </div>
         </div>
+      </div>
+      <div className="aboutme" style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",margin:"10vh"}}>
+        <span style={{fontWeight:"bold",fontSize:"40px",marginBottom:"3vh"}}>Want to Know How we Work ?</span>
+        <button className="btn trash" style={{fontSize:"20px",borderRadius:"20px"}} onClick={()=>{navigate('/aboutus')}}>About us</button>
       </div>
     </div>
   );
