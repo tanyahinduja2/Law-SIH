@@ -65,11 +65,11 @@ function ChatBot() {
 
       {!isInChat ? (
         <div className="room">
-          <label> Type room name: </label>
-          <input value={room} onChange={(e) => setRoom(e.target.value)} />
+          {/* <label> Type room name: </label> */}
+          <input value={room} onChange={(e) => setRoom(e.target.value)} style={{display:"none"}}/>
           <button
             onClick={handleCHAT}
-          >
+           style={{display:"none"}}>
             Enter Chat
           </button>
         </div>
