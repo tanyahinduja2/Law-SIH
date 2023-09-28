@@ -28,9 +28,9 @@
   left: 0;
   bottom: 0;
   right: 0;
-  height: 560px;
+  height: 85vh;
   background-image: url("https://img.freepik.com/free-photo/gavel-with-books-old-wooden-desk_93675-129543.jpg?w=900&t=st=1695768109~exp=1695768709~hmac=1e015c9f942d0307b66025382a73f3c058acea3aae94a96067be4936d90af4ed");
-  background-position: center bottom 10%;
+  background-position: center top 75%;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -43,8 +43,7 @@
 }
 
 .seek-text {
-
-  margin-top: 500px;
+  margin-top: 600px;
 }
 
 .seek-assistance-card {
